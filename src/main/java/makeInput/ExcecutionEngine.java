@@ -32,15 +32,7 @@ public class ExcecutionEngine {
 //
 //    }	    private static String getDefaultCharSet() {
 
-    private static String getDefaultCharSet() {
 
-        OutputStreamWriter writer = new OutputStreamWriter(new ByteArrayOutputStream());
-
-        String enc = writer.getEncoding();
-
-        return enc;
-
-    }
 	public static void main(String[] args) throws Exception {
         System.out.println("Default Charset=" + Charset.defaultCharset());
 
@@ -50,7 +42,7 @@ public class ExcecutionEngine {
 
         System.out.println("Default Charset=" + Charset.defaultCharset());
 
-        System.out.println("Default Charset in Use=" + getDefaultCharSet());
+
 		//args[0]= "bach";
 
 		// Selenium:
