@@ -1,0 +1,1 @@
+WENN ich den Link "Virtuelle SIBOS 2020" markiere DANN prüfe ich, ob der Link "Virtuelle SIBOS 2020" den Wert "3" anzeigt

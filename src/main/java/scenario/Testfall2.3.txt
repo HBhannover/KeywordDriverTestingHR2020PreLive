@@ -1,0 +1,1 @@
+WENN ich in der Tabelle "ABCXYZ" in der Spalte "y" die Liste ["81", "1", "9", "64", "5"] eingebe UND ich die Schaltfläche "Berechne" mit Linksklick auswähle DANN prüfe ich, ob in der Tabelle "ABC" in der Zeile "4" die Liste ["9", "64", "1", "12"] angezeigt werden.

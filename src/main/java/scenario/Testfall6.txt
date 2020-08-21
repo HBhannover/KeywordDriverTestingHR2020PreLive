@@ -1,0 +1,1 @@
+WENN ich in der Dropdownliste "LanguageDropDown" das Feld mit dem Namen "English" mit Linksklick auswähle DANN prüfe ich, ob in der Dropdownliste "LanguageDropDown" das Feld mit dem Namen "English" vorhanden ist.  

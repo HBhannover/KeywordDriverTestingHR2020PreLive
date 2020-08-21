@@ -1,0 +1,1 @@
+WENN ich in der Tabelle "ABCXYZ" in der Spalte "y" die Liste ["81", "1", "9", "64", "5"] eingebe UND ich die Schaltfläche "Berechne" mit Linksklick auswähle DANN prüfe ich, ob in der Tabelle "ABCD" in einer beliebigen Zeile ein Wert "10" in der Spalte "x" und ein Wert "5" in der Spalte "z" vorhanden ist 

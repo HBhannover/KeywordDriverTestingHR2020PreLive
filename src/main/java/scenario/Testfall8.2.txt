@@ -1,0 +1,1 @@
+WENN ich den Link "Virtuelle SIBOS 2020" mit Rechtsklick auswähle DANN prüfe ich, ob der Link "Virtuelle SIBOS 2020" den Wert "SIBOS 2020" anzeigt

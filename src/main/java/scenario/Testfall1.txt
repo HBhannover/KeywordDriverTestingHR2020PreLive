@@ -1,0 +1,1 @@
+WENN ich in dem Textfeld Benutzername „Busterlogin“ den Wert „Musterlogin“ eingebe UND ich in dem Passwortfeld PasswortLogin den Wert „1234“ eingebe UND ich die Schaltfläche Login mit Linksklick auswähle DANN prüfe ich, ob in dem Ausgabefeld LoginAusgabe der Wert „Sie haben sich erfolgreich eingeloggt!“ angezeigt wird.

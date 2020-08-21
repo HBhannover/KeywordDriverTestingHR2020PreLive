@@ -1,0 +1,1 @@
+WENN ich über die Dropdownliste "CalculatorList" fahre DANN prüfe ich, ob in der Dropdownliste "CalculatorList" an der Stelle "3" der Wert "blah" angezeigt wird

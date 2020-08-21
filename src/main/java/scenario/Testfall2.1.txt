@@ -1,0 +1,1 @@
+WENN ich in der Tabelle "Additionstabelle" in dem Feld mit der Zeile "1" und der Spalte "x" den Wert "2" eingebe UND ich in der Tabelle "Additionstabelle" in dem Feld mit der Zeile "1" und der Spalte "y" den Wert "4" eingebe UND ich die Schaltfläche "Berechne" mit Linksklick auswähle DANN prüfe ich, ob in der Tabelle "ABC" in der Zeile "2" minimal "2" Werte angezeigt werden.

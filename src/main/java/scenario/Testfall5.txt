@@ -1,0 +1,1 @@
+WENN ich das Symbol FirmenLogo mit Doppelklick auswähle DANN prüfe ich ob in dem Textfeld URL der Wert „keisan.casio.com“ angezeigt wird.

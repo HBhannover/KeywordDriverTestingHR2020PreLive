@@ -1,0 +1,1 @@
+WENN, ich den Radiobutton "20 to 39" anwähle DANN prüfe ich, ob der Radiobutton "60 or over" abgewählt ist.

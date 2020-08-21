@@ -1,0 +1,1 @@
+WENN ich den Link "Virtuelle SIBOS 2020" mit Linksklick auswähle DANN prüfe ich, ob der Link "Virtuelle SIBOS 2020" zu dem Bildschirm "Welcome To Sibos | Sibos" führt

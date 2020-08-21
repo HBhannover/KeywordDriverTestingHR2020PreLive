@@ -1,0 +1,1 @@
+WENN ich in dem Textfeld "Benutzername" den Wert "dentruocbinhminh@yahoo.com" eingebe UND ich in dem Passwortfeld "PasswortLogin" den Wert "Test4test!" eingebe UND ich die Schaltfläche "Login" mit Linksklick auswähle DANN prüfe ich, ob in dem Ausgabefeld "LoginAusgabe" der Wert "Dashboard-Bibliothek" angezeigt wird.

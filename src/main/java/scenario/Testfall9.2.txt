@@ -1,0 +1,1 @@
+WENN ich in der Kombobox "Location" bei der erschienenen Liste, die durch die Eingabe des Wertes "Hannover" die Wertnummer "1" mit Linksklick auswähle DANN prüfe ich, ob in der Kombobox "Location" den Wert "Hannover, Niedersachsen" angezeigt wird.

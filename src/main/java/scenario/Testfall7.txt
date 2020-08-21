@@ -1,0 +1,1 @@
+WENN ich auf der Scrollbar "ABC" auf den Wert "Vegetarische und Vegane Hotels" scrolle DANN prüfe ich, ob auf der Scrollbar "ABC" der Wert "Hoteliers" eingestellt ist.

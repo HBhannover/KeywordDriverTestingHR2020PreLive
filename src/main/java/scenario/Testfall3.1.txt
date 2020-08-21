@@ -1,0 +1,1 @@
+WENN, ich den Checkbox "Comedy" anwähle DANN prüfe ich, ob der Checkbox "Horror" abgewählt ist.
