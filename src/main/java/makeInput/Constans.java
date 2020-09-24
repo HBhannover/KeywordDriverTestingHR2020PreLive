@@ -28,26 +28,26 @@ public class Constans {
 	public static String pathTestfall9_1 = "C:\\Users\\hbn\\DemoKeywordDriver\\Henrik_MA2020\\src\\main\\java\\scenario\\Testfall9.1.txt";
 	public static String pathTestfall9_2 = "C:\\Users\\hbn\\DemoKeywordDriver\\Henrik_MA2020\\src\\main\\java\\scenario\\Testfall9.2.txt";
 	public static String pathProbe = "C:\\Users\\hbn\\DemoKeywordDriver\\Henrik_MA2020\\src\\main\\java\\scenario\\TFProbe.txt";
-	public static String pathEncodingCHCP1252 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\ProbeEncodingCHCP1252";
+	
 	
 	//Henrik-Objekt:
-	public static String pathTextfeld1 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Textfeld1.txt";
-	public static String pathRadiobutton1 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Radiobutton1.txt";
-	public static String pathCheckbox1 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Checkbox1.txt";
-	public static String pathPasswortfeld1 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Passwortfeld1.txt";
-	public static String pathDropdown1  = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Dropdown1.txt";
-	public static String pathDropdown2  = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Dropdown2.txt";
-	public static String pathKombobox1  = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Kombobox1.txt";
-	public static String pathKombobox2  = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Kombobox2.txt";
-	public static String pathScrollbar1  = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Scrollbar1.txt";
-	public static String pathLink1  = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Link1.txt";
-	public static String pathLink2  = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Link2.txt";
-	public static String pathTabelle1 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Tabelle1.txt";
-	public static String pathTabelle2 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Tabelle2.txt";
-	public static String pathTabelle3 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Tabelle3.txt";
-	public static String pathTabelle4 = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_Tabelle4.txt";
-	public static String pathTabelleProbe = "C:\\Users\\hbn\\Desktop\\Bach\\PPI_Welt\\Henrik_MA\\Testobjekt\\Testfall\\TF_TabelleProbe.txt";
-
+	public static String pathTextfeld1 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Textfeld1.txt";
+	public static String pathRadiobutton1 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Radiobutton1.txt";
+	public static String pathCheckbox1 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Checkbox1.txt";
+	public static String pathPasswortfeld1 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Passwortfeld1.txt";
+	public static String pathDropdown1  = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Dropdown1.txt";
+	public static String pathDropdown2  = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Dropdown2.txt";
+	public static String pathKombobox1  = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Kombobox1.txt";
+	public static String pathKombobox2  = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Kombobox2.txt";
+	public static String pathScrollbar1  = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Scrollbar1.txt";
+	public static String pathLink1  = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Link1.txt";
+	public static String pathLink2  = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Link2.txt";
+	public static String pathTabelle1 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Tabelle1.txt";
+	public static String pathTabelle2 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Tabelle2.txt";
+	public static String pathTabelle3 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Tabelle3.txt";
+	public static String pathTabelle4 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_Tabelle4.txt";
+	public static String pathTabelleProbe = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\TF_TabelleProbe.txt";
+	public static String pathEncodingCHCP1252 = "C:\\Users\\case\\Desktop\\HR2020\\DataFile-master\\Testfall\\ProbeEncodingCHCP1252";
 	
 	// WebApps:
 	public static String url = "http://app.hubspot.com/login"; //für TF1
@@ -57,7 +57,7 @@ public class Constans {
 	public static String urlPPIAG = "https://www.ppi.de/"; //für TF8
 	public static String urlProbe = "https://chandanachaitanya.github.io/selenium-practice-site/";
 	public static String urlKombobox ="https://www.ibm.com/support/knowledgecenter/de";
-	public static String urlHenrik = "file:///C:/Users/hbn/Desktop/Bach/PPI_Welt/Henrik_MA/Testobjekt/index.html";
+	public static String urlHenrik = "file:///C:/Users/case/Desktop/HR2020/Testobjekt/index.html";
 	
 	// Elements lokalisieren:
 	
@@ -92,13 +92,13 @@ public class Constans {
 	public static String CheckBox1_AddressTyp = "xpath";
 	public static String CheckBox1_Address = "//input[@value='salami']";
 	
-	public static String CheckBox2_AddressTyp = "";
+	public static String CheckBox2_AddressTyp = "xpath";
 	public static String CheckBox2_Address = "//input[@value='schinken']";
 	
-	public static String CheckBox3_AddressTyp = "";
+	public static String CheckBox3_AddressTyp = "xpath";
 	public static String CheckBox3_Address = "//input[@value='sardellen']";
 	
-	public static String CheckBox4_AddressTyp = "";
+	public static String CheckBox4_AddressTyp = "xpath";
 	public static String CheckBox4_Address = "//input[@value='ananas']";
 	
 /***Tabelle**/

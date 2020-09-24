@@ -12,16 +12,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,13 +45,19 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Common {
+public class Common {	
+	
+	public static String ID = null;
 	
 	public static WebElement element;
 	public static List<WebElement> listElements;
 	
 	//public static WebDriver driver = new FirefoxDriver();
 	public static WebDriver driver = new ChromeDriver();
+	public static Logger logger=Logger.getLogger("Common");
+	public Common() throws Exception {
+	FileHandler fh = new FileHandler("C:/Users/case/Desktop/HR2020/Logs_Screenshots/TestLogsID.txt");
+	   logger.addHandler(fh);}
 	
  	public static void openUrl(String inputUrl){	
  		driver.get(inputUrl);
@@ -60,6 +74,13 @@ public class Common {
  	public static String takeCurrentUrl() {
  		String currentUrl = driver.getCurrentUrl();
  		return currentUrl;
+ 	}
+ 	
+ 	public static void takeScreenShort(String pfadToSave) throws IOException {
+ 		TakesScreenshot scrShot =((TakesScreenshot) driver);
+ 		File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+ 		File DestFile=new File(pfadToSave);
+ 		FileUtils.copyFile(SrcFile, DestFile);	
  	}
  	
  	public static void duppleClicker(String elementAddressTyp, String elementAddress) throws Exception {
@@ -156,8 +177,9 @@ public class Common {
 	
 	//Find out a Webelement by different locatorTyp
 	public static WebElement Locator(String locatorTyp, String locatorAddress){
-	
+		try {
 		switch (locatorTyp) {
+	
 		case "id":
 			element = driver.findElement(By.id(locatorAddress));
 			locatorTyp = null;
@@ -198,7 +220,10 @@ public class Common {
 			break;
 			
 		default:
-			break;
+			break; 
+		}
+		} catch (NoSuchElementException ex) {
+			logger.warning("KEINE ELEMENTE gefunden");
 		}
 		return element;
 		
@@ -288,101 +313,25 @@ public class Common {
 		return SENTENCES;
 	}
 	
-//	public static String[] SentencesDef(String path) {
-//		  FileInputStream fis = null;
-//	        BufferedReader reader = null;
-//		try {
-//			//sentence = new Scanner(new File(path));
-//			fis = new FileInputStream(path);
-//			 reader = new BufferedReader(new InputStreamReader(fis));
-//			 String line = reader.readLine();
-//	            while(line != null){
-//	                System.out.println(line);
-//	                line = reader.readLine();
-//	            }
-//		} catch (FileNotFoundException e) {
-//			System.out.println("Path not found!");
-//			e.printStackTrace();
-//		}
-//
-//		finally {
-//            try {
-//                reader.close();
-//                fis.close();
-//            } catch (IOException ex) {
-//               // Logger.getLogger(ReadFileWithBufferedReader.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-//		ArrayList<String> sentenceList = new ArrayList<String>();
-//		sentenceList.add(line.nextLine());
-//		
-//		String[] sentenceArray = sentenceList.toArray(new String[sentenceList.size()]);
-//
-//		for (int r = 0; r < sentenceArray.length; r++) {
-//			
-//			// find out the sentence
-//			SENTENCES = sentenceArray[r].split("(?=WENN)|(?=ODER(?! NÄCHSTEN))|(?=DANN)|(?=UND)|(?=IMMER)|(?=NICHT)"); // WENN|UND|DANN|[.]
-//
-//		}
-//		return SENTENCES;
-//	}
-//	 
+	public static String[] SentencesDefFromJira(String text) {
+		String[] SENTENCES = null;	
+		
+		ArrayList<String> sentenceList = new ArrayList<String>();
+		if(text != null) {
+		sentenceList.add(text);		
+		System.out.println("Freitext ist: "+sentenceList+ " Size: "+ sentenceList.size());
+		
+		String[] sentenceArray = sentenceList.toArray(new String[sentenceList.size()]);
+//		System.out.println(Arrays.toString(sentenceArray));
+//		System.out.println(sentenceArray.length);
+		for (int r = 0; r < sentenceArray.length; r++) {
+			// find out the sentence
+			SENTENCES = sentenceArray[r].split("(?=WENN)|(?=ODER(?! NÄCHSTEN))|(?=DANN)|(?=UND)|(?=IMMER)|(?=NICHT)"); // WENN|UND|DANN|[.]
+		}
+		}
+		return SENTENCES;
+	}
 	
-	// Define List of sentences from a long text
-//	public static String[] SentencesDef(String path) {
-//
-//		Scanner sentence = null;
-//		String[] SENTENCES = null;
-//		try {
-//			sentence = new Scanner(new File(path));
-//		} catch (FileNotFoundException e) {
-//			System.out.println("Path not found!");
-//			e.printStackTrace();
-//		}
-//		ArrayList<String> sentenceList = new ArrayList<String>();
-//
-//		while (sentence.hasNextLine()) {
-//			sentenceList.add(sentence.nextLine());
-//		}
-//		sentenceList.trimToSize();
-//		sentence.close();
-//		System.out.println("Hier ist Liste: " + sentenceList);
-//
-//		String[] sentenceArray = sentenceList.toArray(new String[sentenceList.size()]);
-//
-//		for (int r = 0; r < sentenceArray.length; r++) {
-//
-//			// find out the sentence
-//			SENTENCES = sentenceArray[r].split("WENN&&WENN|UND|DANN|ODER|NICHT|IMMER"); // WENN|UND|DANN|[.]
-//
-//		}
-//		return SENTENCES;
-//	}
-//	
-//	public static String SentencesDef1(String text) {
-//		List<String> keywordsToSplitOn = Arrays.asList("FIRST", "NOW", "THEN");
-//
-//		//lets search for quotes ".." | words | whitespaces
-//		Pattern p = Pattern.compile("\"[^\"]*\"|\\S+|\\s+");
-//		Matcher m = p.matcher(text);
-//
-//		StringBuilder sb = new StringBuilder();
-//		String[] result = null;
-//		while(m.find()){
-//		    String token = m.group();
-//		    if (keywordsToSplitOn.contains(token) && sb.length() != 0){
-//		        result.add(sb.toString());
-//		        sb.delete(0, sb.length());//clear sb
-//		    }
-//		    sb.append(token);
-//		}
-//		if (sb.length() != 0){//include rest of text after last keyword 
-//		    result.add(sb.toString());
-//		}
-//
-//		return result;
-//	}
-
 	//split list of sentences by space, and become more words
 	public static String[] WordsDefMoreSentences(String[] Sentences) {
 		String[] words = null;
@@ -851,19 +800,39 @@ public class Common {
 		TimeUnit.SECONDS.sleep(3);
 		Common.Locator(buttonAddressTyp, buttonAddress).click();
 		TimeUnit.SECONDS.sleep(5);
-
 	}
 
-	public static void InputValueInField(String FieldAddressTyp, String FieldAddress, String Value) throws Exception {
-		TimeUnit.SECONDS.sleep(3);
-		Common.Locator(FieldAddressTyp, FieldAddress).clear();
-		Common.Locator(FieldAddressTyp, FieldAddress).sendKeys(Value);
+	public static void InputValueInField(String FieldAddressTyp, String FieldAddress, String Value)  {
+		
+		try {
+			try {
+				TimeUnit.SECONDS.sleep(3);
+				Common.Locator(FieldAddressTyp, FieldAddress).clear();
+				Common.Locator(FieldAddressTyp, FieldAddress).sendKeys(Value);
+				logger.info("Eingabe erfolgreich");
+			} catch (InterruptedException e) {
+				logger.warning("NOT FOUND INPUTFELD");
+				System.err.println("FAILURE");
+				e.printStackTrace();
+			}
+	
+		}
+		catch (NoSuchElementException  ex) {
+			logger.warning("Input failed");
+			System.err.println("FAILL");
+		}
+		
 	}
 
 	public static String getTextByElement(String ElementAddressTyp, String ElementAddress) {
 		String elementText = Common.Locator(ElementAddressTyp, ElementAddress).getText();
 		return elementText;
 	}
+	
+	public static String htmlTextGetterHR(String id) {
+		String elem = driver.findElement(By.id(id)).getAttribute("value");
+		return elem;
+		}
 
 	// überprüfen, ob Radiobutton oder CheckBox schon angewählt wurde? (true/false)
 	public static boolean checkRadioButtonAndCheckBox(String elementAddressTyp, String elementAddress) {
@@ -1179,5 +1148,109 @@ and switch back to the parent window
 driver.switchTo().window(parentWindow);
 
 */
+
+public static String testExecuter(String sentence) throws IOException {
+	String statusID = null;
+	KeywordsEditor keywordsEdit = new KeywordsEditor();
+	for(int n=1; n<2; n++) {
+		
+		Common.openUrl(Constans.urlHenrik);
+		
+		if(n==1) {
+			System.out.println("_______________ Testfall"+n+"_________________");
+			//Common.openUrl(Constans.url);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall1);
+		//	keywordsEdit.keywordsHandling(Constans.pathTabelleProbe); 
+			try {
+				statusID =	keywordsEdit.keywordsHandling(sentence);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
 			
+			
+//			keywordsEdit.keywordsHandling(Constans.pathTextfeld1);
+//			keywordsEdit.keywordsHandling(Constans.pathTabelle4);
+//			keywordsEdit.keywordsHandling(Constans.pathTabelle3);
+//			keywordsEdit.keywordsHandling(Constans.pathTabelle2);
+//			keywordsEdit.keywordsHandling(Constans.pathTabelle1);
+//			keywordsEdit.keywordsHandling(Constans.pathRadiobutton1);
+//			keywordsEdit.keywordsHandling(Constans.pathCheckbox1);
+//			keywordsEdit.keywordsHandling(Constans.pathPasswortfeld1);
+//			keywordsEdit.keywordsHandling(Constans.pathDropdown1);
+//			keywordsEdit.keywordsHandling(Constans.pathDropdown2);
+//			keywordsEdit.keywordsHandling(Constans.pathKombobox1);
+//			keywordsEdit.keywordsHandling(Constans.pathScrollbar1);
+//			keywordsEdit.keywordsHandling(Constans.pathLink1);
+//			keywordsEdit.keywordsHandling(Constans.pathLink2);
+		
+		}
+		if(n==2) {
+			System.out.println("_______________ Testfall"+n+"_________________");
+			//Common.openUrl(Constans.urlAdditionTable);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall2);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall2_1);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall2_2);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall2_3);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall2_4);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall2_5);
+			try {
+				keywordsEdit.keywordsHandling(Constans.pathProbe);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		if(n==3) {
+			System.out.println("_______________ Testfall"+n+"_________________");
+			//Common.openUrl(Constans.urlRadioButtonCheckBox);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall3);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall3_1);
+			
+		}
+		if(n==4) {
+			System.out.println("Testfall 4");
+			
+		}
+		if(n==5) {
+			System.out.println("_______________ Testfall"+n+"_________________");
+			//Common.openUrl(Constans.urlAdditionTable);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall5);
+			
+		}
+		if(n==6) {
+			System.out.println("_______________ Testfall"+n+"_________________");
+			//Common.openUrl(Constans.urlBootstrapDropDown);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall6);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall6_2);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall6_3);
+			//keywordsEdit.keywordsHandling(Constans.pathProbe);
+		}
+		if(n==7) {
+			System.out.println("_______________ Testfall"+n+"_________________");
+			//Common.openUrl(Constans.urlBootstrapDropDown);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall7);
+			//keywordsEdit.keywordsHandling(Constans.pathProbe);
+		}
+		if(n==8) {
+			System.out.println("_______________ Testfall"+n+"_________________");
+			//Common.openUrl(Constans.urlPPIAG);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall8_1);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall8_2);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall8_3);
+		}
+		if(n==9) {
+			System.out.println("_______________ Testfall"+n+"_________________");
+			//Common.openUrl(Constans.urlBootstrapDropDown);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall9_1);
+			//keywordsEdit.keywordsHandling(Constans.pathTestfall9_2);
+			
+		}
+		
+	}
+	return statusID;
+		
+}
+
 }

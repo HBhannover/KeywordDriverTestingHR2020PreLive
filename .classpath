@@ -24,8 +24,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/hbn/Desktop/Bach/PPI_Welt/Henrik_MA/selenium-server-standalone-3.141.59.jar"/>
-	<classpathentry kind="lib" path="C:/Users/hbn/Desktop/Bach/PPI_Welt/Henrik_MA/selenium-java-2.48.2/selenium-2.48.2/selenium-java-2.48.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/hbn/Desktop/Bach/PPI_Welt/Henrik_MA/selenium-java-2.48.2/selenium-2.48.2/selenium-java-2.48.2-srcs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/case/Desktop/HR2020/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/case/Desktop/HR2020/selenium-2.48.2/selenium-java-2.48.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/case/Desktop/HR2020/selenium-2.48.2/selenium-java-2.48.2-srcs.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
