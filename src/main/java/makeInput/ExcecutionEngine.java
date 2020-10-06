@@ -14,6 +14,7 @@ import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -60,8 +61,8 @@ public class ExcecutionEngine {
 	//static KeywordsEditor keywordsEdit;
 
 	public static void main(String[] args) throws Exception {
-		   Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-		   logger.setLevel(Level.ALL);
+//		   Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+//		   logger.setLevel(Level.ALL);
 		
 		LogManager.getLogManager().readConfiguration(new FileInputStream("U:\\git\\KeywordDriverTestingHR2020\\src\\main\\java\\Log4jDB\\loggingAPI.properties"));
 	  
@@ -72,14 +73,15 @@ public class ExcecutionEngine {
 		
         System.out.println("Default Charset=" + Charset.defaultCharset());
 
-        System.setProperty("file.encoding", "Latin-1");
+//        System.setProperty("file.encoding", "UTF-8");
+//        System.setProperty("Charset.defaultCharset()", "UTF-8");
 
         System.out.println("file.encoding=" + System.getProperty("file.encoding"));
 
         System.out.println("Default Charset=" + Charset.defaultCharset());
+        System.setProperty("file.encoding", "UTF-8");
+        System.out.println("file.encoding=" + System.getProperty("file.encoding"));
 
-
-		//args[0]= "bach";
 
 		// Selenium:
 		//System.setProperty("webdriver.gecko.driver","U:\\git\\KeywordDriverTestingHR2020\\Drivers\\geckodriver.exe");
@@ -89,6 +91,7 @@ public class ExcecutionEngine {
 		
 		for (int i = 0; i < args.length; i++) {
     		System.out.println("Die Eingabe war: " +args[i]);
+    		
     		//API GET Request um die zu automatisierenden Sätze aus der Jira Cloud zu laden
     		String uri=("http://localhost:2990/jira/rest/api/latest/issue/"+args[i]);
     		String proxy =("http://localhost:8080/");
@@ -101,7 +104,7 @@ public class ExcecutionEngine {
     		String encoding =("admin" + ":" + "admin");
     		byte[] bytesEncoded = Base64.encodeBase64(encoding.getBytes());
     		
-    		System.out.println("encoded value is " + new String(bytesEncoded));
+    		System.out.println("encoded value is: " + new String(bytesEncoded));
             //"YWRtaW4gOiBhZG1pbg==";//Base64Encoder.encode;
 
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -114,7 +117,7 @@ public class ExcecutionEngine {
 
             int status = con.getResponseCode();
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream())); //Writer out = new OutputStreamWriter(new FileOutputStream(yourFile), "windows-1252");
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream(),  "UTF-8")); //Writer out = new OutputStreamWriter(new FileOutputStream(yourFile), "windows-1252");
 
             String inputLine;
 
@@ -126,6 +129,7 @@ public class ExcecutionEngine {
                 content.append(inputLine);
 
             }
+System.out.println("inputLine hier: "+inputLine);
 
             in.close();
 
@@ -167,17 +171,18 @@ public class ExcecutionEngine {
             //String contentType = con.getHeaderField("Content-Type");
 
             int status5 = con5.getResponseCode();
-
+//******//
             BufferedReader in5 = new BufferedReader(new InputStreamReader(con5.getInputStream())); //Writer out = new OutputStreamWriter(new FileOutputStream(yourFile), "windows-1252");
-
+//*****//
             String inputLine5;
 
             StringBuffer content5 = new StringBuffer();
             
 
             while ((inputLine5 = in5.readLine()) != null) {
-
+            	//inputLine5.getBytes(StandardCharsets.UTF_16BE);
                 content5.append(inputLine5);
+System.out.println("Hier sind Sätze: "+inputLine5);
 
             }
 
@@ -187,8 +192,8 @@ public class ExcecutionEngine {
             JSONParser jsonParser5 = new JSONParser();
             JSONObject jsonObject5 = (JSONObject) jsonParser5.parse(content5.toString());
             JSONArray JSONArray =(JSONArray) jsonObject5.get("stepBeanCollection");
-            int size= jsonObject5.size();
-            System.out.println(size);
+            int size= JSONArray.size();
+           // System.out.println("Size ist jetzt: "+size);
             System.out.println("OBJEKT"+jsonObject5);
             for(int k=0;k<size;k++)
             {
@@ -236,11 +241,11 @@ public class ExcecutionEngine {
             
             
             
-            OutputStreamWriter osw = new OutputStreamWriter(con1.getOutputStream());
+            OutputStreamWriter osw = new OutputStreamWriter(con1.getOutputStream(), "windows-1252");
             osw.write(data);
             osw.flush();
             osw.close();
-            BufferedReader in1 = new BufferedReader(new InputStreamReader(con1.getInputStream())); //Writer out = new OutputStreamWriter(new FileOutputStream(yourFile), "windows-1252");
+            BufferedReader in1 = new BufferedReader(new InputStreamReader(con1.getInputStream(), "windows-1252")); //Writer out = new OutputStreamWriter(new FileOutputStream(yourFile), "windows-1252");
             
             if (con1 != null) {
                 StringBuilder sb = new StringBuilder();
@@ -278,6 +283,7 @@ public class ExcecutionEngine {
         	comment = "Test nicht bestanden";
         } else {
         	comment = "Test noch in Bearbeitung";
+        	logger.warning("Test wurde abgebrochen während der Satzbearbeitung");
         }
       //  String log= keywordsEdit1.verify();
 

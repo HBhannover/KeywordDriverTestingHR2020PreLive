@@ -102,58 +102,60 @@ public class KeywordsEditor {
 //Textfeld		
 		//Textfeld Eingabefeld1 = new Textfeld(Constans.name1, Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address);
 		//Textfeld/Linksklick				
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld1")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Name")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
 			prf +=1;
 			Common.buttonClicker(Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address);
 			logger.info("Textfeld/Linksklick erfolgreich!");
 		}
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld2")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Adresse")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
 			prf +=1;
 			Common.buttonClicker(Constans.Textfeld2_AddressTyp, Constans.Textfeld2_Address);
 			logger.info("Textfeld/Linksklick erfolgreich!");
 		}
 		//Textfeld/eingebe
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld1")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("eingebe")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Name")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("eingebe")) {
 			prf +=1;
 			String quoteText2 = quoteText[1].toString();
 			Common.InputValueInField(Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address, quoteText2);
+			System.out.println("1löööß");
 			logger.info("Textfeldseingabe erfolgreich!");
 		}
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld2")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("eingebe")) {			
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Adresse")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("eingebe")) {			
 			prf +=1;
+			System.out.println("löööß");
 			String quoteText2 = quoteText[1].toString();
 			Common.InputValueInField(Constans.Textfeld2_AddressTyp, Constans.Textfeld2_Address, quoteText2);
-			logger.info("Textfeldseingabe erfolgreich!");
+			logger.info("löööß Textfeldseingabe erfolgreich!");
 		}
 		//Textfeld/Rechtsklick
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld1")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Name")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
 			prf +=1;
 			Common.rightClicker(Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address);
 			logger.info("Textfeld/Rechtsklick erfolgreich!");
 		}
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld2")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Adresse")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
 			prf +=1;
 			Common.rightClicker(Constans.Textfeld2_AddressTyp, Constans.Textfeld2_Address);
 			logger.info("Textfeld/Rechtsklick erfolgreich!");
 		}
 		//Textfeld/markiere
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld1")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("markiere")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Name")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("markiere")) {
 			prf +=1;
 			Common.highLighterMethod(Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address);
 			logger.info("Textfeld/markiere erfolgreich!");
 		}
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld2")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("markiere")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Adresse")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("markiere")) {
 			prf +=1;
 			Common.highLighterMethod(Constans.Textfeld2_AddressTyp, Constans.Textfeld2_Address);
 			logger.info("Textfeld/markiere erfolgreich!");
 		}
 		//Textfeld/überfahre
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld1")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Name")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")) {
 			prf +=1;
 			Common.mouseOverElement(Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address);
 			logger.info("Textfeld/überfahre erfolgreich!");
 		}
-		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Eingabefeld2")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")) {
+		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Adresse")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")) {
 			prf +=1;
 			Common.mouseOverElement(Constans.Textfeld2_AddressTyp, Constans.Textfeld2_Address);
 			logger.info("Textfeld/überfahre erfolgreich!");
@@ -193,14 +195,14 @@ public class KeywordsEditor {
 		}
 				
 //Schaltfläche
-		//Schaltfläche/Login/Linksklick
+		//Schaltfläche/Linksklick
 		if(SENTENCES[i].contains("Schaltfläche") && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
-			if(SENTENCES[i].contains("schaltfläche1")) {
+			if(SENTENCES[i].contains("Preis berechnen")||SENTENCES[i].contains("Preisrechner")) {
 				prf +=1;
 				Common.buttonClicker(Constans.Schalflaeche1_AddressTyp, Constans.Schalflaeche1_Address);
 				logger.info("Schaltfläche/Linksklick erfolgreich!");
 			}
-			if(SENTENCES[i].contains("schaltfläche2")) {
+			if(SENTENCES[i].contains("Pizza bestellen")||SENTENCES[i].contains("Bestellbutton")) {
 				prf +=1;
 				Common.buttonClicker(Constans.Schalflaeche2_AddressTyp,Constans.Schalflaeche2_Address);
 				logger.info("Schaltfläche/Linksklick erfolgreich!");
@@ -208,12 +210,12 @@ public class KeywordsEditor {
 		}
 		// Schaltfläche/Doppelklick
 		if (SENTENCES[i].contains("Schaltfläche") && SENTENCES[i].contains("Doppelklick") && SENTENCES[i].contains("auswähle")) {
-			if(SENTENCES[i].contains("schaltfläche1")) {
+			if(SENTENCES[i].contains("Preis berechnen")||SENTENCES[i].contains("Preisrechner")) {
 				prf +=1;
 				Common.duppleClicker(Constans.Schalflaeche1_AddressTyp, Constans.Schalflaeche1_Address);
 				logger.info("Schaltfläche/Doppelklick erfolgreich!");
 			}
-			if(SENTENCES[i].contains("schaltfläche2")) {
+			if(SENTENCES[i].contains("Pizza bestellen")||SENTENCES[i].contains("Bestellbutton")) {
 				prf +=1;
 				Common.duppleClicker(Constans.Schalflaeche2_AddressTyp, Constans.Schalflaeche2_Address);
 				logger.info("Schaltfläche/Doppelklick erfolgreich!");
@@ -221,12 +223,12 @@ public class KeywordsEditor {
 		}
 		// Schaltfläche/Rechtsklick
 		if (SENTENCES[i].contains("Schaltfläche") && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
-			if(SENTENCES[i].contains("schaltfläche1")) {
+			if(SENTENCES[i].contains("Preis berechnen")||SENTENCES[i].contains("Preisrechner")) {
 				prf +=1;
 				Common.rightClicker(Constans.Schalflaeche1_AddressTyp, Constans.Schalflaeche1_Address);
 				logger.info("Schaltfläche/Rechtsklick erfolgreich!");
 			}
-			if(SENTENCES[i].contains("schaltfläche2")) {
+			if(SENTENCES[i].contains("Pizza bestellen")||SENTENCES[i].contains("Bestellbutton")) {
 				prf +=1;
 				Common.rightClicker(Constans.Schalflaeche2_AddressTyp, Constans.Schalflaeche2_Address);
 				logger.info("Schaltfläche/Rechtsklick erfolgreich!");
@@ -234,12 +236,12 @@ public class KeywordsEditor {
 		}
 		// Schaltfläche/überfahren
 		if (SENTENCES[i].contains("Schaltfläche") && SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")) {
-			if(SENTENCES[i].contains("schaltfläche1")) {
+			if(SENTENCES[i].contains("Preis berechnen")||SENTENCES[i].contains("Preisrechner")) {
 				prf +=1;
 				Common.mouseOverElement(Constans.Schalflaeche1_AddressTyp, Constans.Schalflaeche1_Address);
 				logger.info("Schaltfläche/überfahren erfolgreich!");
 			}
-			if(SENTENCES[i].contains("schaltfläche2")) {
+			if(SENTENCES[i].contains("Pizza bestellen")||SENTENCES[i].contains("Bestellbutton")) {
 				prf +=1;
 				Common.mouseOverElement(Constans.Schalflaeche2_AddressTyp, Constans.Schalflaeche2_Address);
 				logger.info("Schaltfläche/überfahren erfolgreich!");
@@ -249,7 +251,7 @@ public class KeywordsEditor {
 //Checkbox-Radiobutton
 		//Checkbox/anwähle
 		if((SENTENCES[i].contains("WENN")||SENTENCES[i].contains("UND")) && SENTENCES[i].contains("Checkbox") && SENTENCES[i].contains("anwähle")) {
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Salami")) {
+			if(SENTENCES[i].contains("Tomate")) {
 				prf +=1;
 				if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address) == false) {
 				Common.clickRadioButtonAndCheckBox(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address);
@@ -257,115 +259,178 @@ public class KeywordsEditor {
 					logger.warning("Checkbox bereits angewählt");
 				}
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Schinken")) {	
+			if(SENTENCES[i].contains("Salami")) {	
 				prf +=1;
 				if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox2_AddressTyp, Constans.CheckBox2_Address) == false) {
 					Common.clickRadioButtonAndCheckBox(Constans.CheckBox2_AddressTyp, Constans.CheckBox2_Address);
 					logger.info("Checkbox/anwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Sardellen")) {	
+			if(SENTENCES[i].contains("Schinken")) {	
 				prf +=1;
 				if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox3_AddressTyp, Constans.CheckBox3_Address) == false) {
 					Common.clickRadioButtonAndCheckBox(Constans.CheckBox3_AddressTyp, Constans.CheckBox3_Address);
 					logger.info("Checkbox/anwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Ananas"))	{
+			if(SENTENCES[i].contains("Sardellen"))	{
 				prf +=1;
 				if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox4_AddressTyp, Constans.CheckBox4_Address) == false) {
 					Common.clickRadioButtonAndCheckBox(Constans.CheckBox4_AddressTyp, Constans.CheckBox4_Address);
 					logger.info("Checkbox/anwähle erfolgreich!");}
 			}	
+			if(SENTENCES[i].contains("Ananas"))	{
+				prf +=1;
+				if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox5_AddressTyp, Constans.CheckBox5_Address) == false) {
+					Common.clickRadioButtonAndCheckBox(Constans.CheckBox5_AddressTyp, Constans.CheckBox5_Address);
+					logger.info("Checkbox/anwähle erfolgreich!");}
+			}
+			if(SENTENCES[i].contains("Artischocken"))	{
+				prf +=1;
+				if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox6_AddressTyp, Constans.CheckBox6_Address) == false) {
+					Common.clickRadioButtonAndCheckBox(Constans.CheckBox6_AddressTyp, Constans.CheckBox6_Address);
+					logger.info("Checkbox/anwähle erfolgreich!");}
+			}
+			if(SENTENCES[i].contains("Champignons"))	{
+				prf +=1;
+				if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox7_AddressTyp, Constans.CheckBox7_Address) == false) {
+					Common.clickRadioButtonAndCheckBox(Constans.CheckBox7_AddressTyp, Constans.CheckBox7_Address);
+					logger.info("Checkbox/anwähle erfolgreich!");}
+			}
 		}
 		//Radiobutton/anwähle
 		if((SENTENCES[i].contains("WENN")||SENTENCES[i].contains("UND")) && SENTENCES[i].contains("Radiobutton")&& SENTENCES[i].contains("anwähle")) {
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")) {
 				prf +=1;
 				if (Common.checkRadioButtonAndCheckBox(Constans.RadioButton1_AddressTyp, Constans.RadioButton1_Address) == false) {
 				Common.clickRadioButtonAndCheckBox(Constans.RadioButton1_AddressTyp, Constans.RadioButton1_Address);
 				logger.info("Radiobutton/anwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")) {
 				prf +=1;
 				if (Common.checkRadioButtonAndCheckBox(Constans.RadioButton2_AddressTyp, Constans.RadioButton2_Address) == false) {
 					Common.clickRadioButtonAndCheckBox(Constans.RadioButton2_AddressTyp, Constans.RadioButton2_Address);
 					logger.info("Radiobutton/anwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")) {
 				prf +=1;
 				if (Common.checkRadioButtonAndCheckBox(Constans.RadioButton3_AddressTyp, Constans.RadioButton3_Address) == false) {
 					Common.clickRadioButtonAndCheckBox(Constans.RadioButton3_AddressTyp, Constans.RadioButton3_Address);
 					logger.info("Radiobutton/anwähle erfolgreich!");}
 			}
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Bar")) {
+				prf +=1;
+				if (Common.checkRadioButtonAndCheckBox(Constans.RadioButton4_AddressTyp, Constans.RadioButton4_Address) == false) {
+					Common.clickRadioButtonAndCheckBox(Constans.RadioButton4_AddressTyp, Constans.RadioButton4_Address);
+					logger.info("Radiobutton/anwähle erfolgreich!");}
+			}
 		}
 		//Checkbox/abwähle
 		if((SENTENCES[i].contains("WENN")||SENTENCES[i].contains("UND")) && SENTENCES[i].contains("Checkbox") && SENTENCES[i].contains("abwähle")) {
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Salami")) {
+			if(SENTENCES[i].contains("Tomate")) {
 				prf +=1;
 			if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address) == true) {
 				Common.clickRadioButtonAndCheckBox(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address);
 				logger.info("Checkbox/abwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Schinken")) {
+			if(SENTENCES[i].contains("Salami")) {
 				prf +=1;
 			if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox2_AddressTyp, Constans.CheckBox2_Address) == true) {
 				Common.clickRadioButtonAndCheckBox(Constans.CheckBox2_AddressTyp, Constans.CheckBox2_Address);
 				logger.info("Checkbox/abwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Sardellen")) {
+			if(SENTENCES[i].contains("Schinken")) {
 				prf +=1;
 			if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox3_AddressTyp, Constans.CheckBox3_Address) == true) {
 				Common.clickRadioButtonAndCheckBox(Constans.CheckBox3_AddressTyp, Constans.CheckBox3_Address);
 				logger.info("Checkbox/abwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Ananas")) {
+			if(SENTENCES[i].contains("Sardellen")) {
 				prf +=1;
 			if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox4_AddressTyp, Constans.CheckBox4_Address) == true) {
 				Common.clickRadioButtonAndCheckBox(Constans.CheckBox4_AddressTyp, Constans.CheckBox4_Address);
 				logger.info("Checkbox/abwähle erfolgreich!");}
 			}
+			if(SENTENCES[i].contains("Ananas")) {
+				prf +=1;
+			if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox5_AddressTyp, Constans.CheckBox5_Address) == true) {
+				Common.clickRadioButtonAndCheckBox(Constans.CheckBox5_AddressTyp, Constans.CheckBox5_Address);
+				logger.info("Checkbox/abwähle erfolgreich!");}
+			}
+			if(SENTENCES[i].contains("Artischocken")) {
+				prf +=1;
+			if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox6_AddressTyp, Constans.CheckBox6_Address) == true) {
+				Common.clickRadioButtonAndCheckBox(Constans.CheckBox6_AddressTyp, Constans.CheckBox6_Address);
+				logger.info("Checkbox/abwähle erfolgreich!");}
+			}
+			if(SENTENCES[i].contains("Champignons")) {
+				prf +=1;
+			if (Common.checkRadioButtonAndCheckBox(Constans.CheckBox7_AddressTyp, Constans.CheckBox7_Address) == true) {
+				Common.clickRadioButtonAndCheckBox(Constans.CheckBox7_AddressTyp, Constans.CheckBox7_Address);
+				logger.info("Checkbox/abwähle erfolgreich!");}
+			}
 		}
 		//Radiobutton/abwähle
 		if((SENTENCES[i].contains("WENN")||SENTENCES[i].contains("UND")) && SENTENCES[i].contains("Radiobutton") && SENTENCES[i].contains("abwähle")) {
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")) {
 				prf +=1;
 			if (Common.checkRadioButtonAndCheckBox(Constans.RadioButton1_AddressTyp, Constans.RadioButton1_Address) == true) {
 				Common.clickRadioButtonAndCheckBox(Constans.RadioButton1_AddressTyp, Constans.RadioButton1_Address);
 				logger.info("Radiobutton/abwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")) {
 				prf +=1;
 			if (Common.checkRadioButtonAndCheckBox(Constans.RadioButton2_AddressTyp, Constans.RadioButton2_Address) == true) {
 				Common.clickRadioButtonAndCheckBox(Constans.RadioButton2_AddressTyp, Constans.RadioButton2_Address);
 				logger.info("Radiobutton/abwähle erfolgreich!");}
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")) {
 				prf +=1;
 			if (Common.checkRadioButtonAndCheckBox(Constans.RadioButton3_AddressTyp, Constans.RadioButton3_Address) == true) {
 				Common.clickRadioButtonAndCheckBox(Constans.RadioButton3_AddressTyp, Constans.RadioButton3_Address);
 				logger.info("Radiobutton/abwähle erfolgreich!");}
 			}
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Bar")) {
+				prf +=1;
+			if (Common.checkRadioButtonAndCheckBox(Constans.RadioButton4_AddressTyp, Constans.RadioButton4_Address) == true) {
+				Common.clickRadioButtonAndCheckBox(Constans.RadioButton4_AddressTyp, Constans.RadioButton4_Address);
+				logger.info("Radiobutton/abwähle erfolgreich!");}
+			}
 		}
 		// Checkbox/überfahren
 		if ((SENTENCES[i].contains("WENN")||SENTENCES[i].contains("UND")) && SENTENCES[i].contains("Checkbox") && SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")) {
-			Common.mouseOverElement(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address);	
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Salami")){
+			//Common.mouseOverElement(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address);	
+			if(SENTENCES[i].contains("Tomate")){
 				prf +=1;
 				Common.mouseOverElement(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address);	
 				logger.info("Checkbox/überfahren erfolgreich!");
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Schinken")){
+			if(SENTENCES[i].contains("Salami")){
 				prf +=1;
 				Common.mouseOverElement(Constans.CheckBox2_AddressTyp, Constans.CheckBox2_Address);	
 				logger.info("Checkbox/überfahren erfolgreich!");
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Sardellen")){
+			if(SENTENCES[i].contains("Schinken")){
 				prf +=1;
 				Common.mouseOverElement(Constans.CheckBox3_AddressTyp, Constans.CheckBox3_Address);
 				logger.info("Checkbox/überfahren erfolgreich!");
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Ananas")){
+			if(SENTENCES[i].contains("Sardellen")){
 				prf +=1;
 				Common.mouseOverElement(Constans.CheckBox4_AddressTyp, Constans.CheckBox4_Address);
+				logger.info("Checkbox/überfahren erfolgreich!");
+			}
+			if(SENTENCES[i].contains("Ananas")){
+				prf +=1;
+				Common.mouseOverElement(Constans.CheckBox5_AddressTyp, Constans.CheckBox5_Address);
+				logger.info("Checkbox/überfahren erfolgreich!");
+			}
+			if(SENTENCES[i].contains("Artischocken")){
+				prf +=1;
+				Common.mouseOverElement(Constans.CheckBox6_AddressTyp, Constans.CheckBox6_Address);
+				logger.info("Checkbox/überfahren erfolgreich!");
+			}
+			if(SENTENCES[i].contains("Champignons")){
+				prf +=1;
+				Common.mouseOverElement(Constans.CheckBox7_AddressTyp, Constans.CheckBox7_Address);
 				logger.info("Checkbox/überfahren erfolgreich!");
 			}
 		}
@@ -373,75 +438,138 @@ public class KeywordsEditor {
 		// Radiobutton/überfahren
 		if ((SENTENCES[i].contains("WENN")||SENTENCES[i].contains("UND")) && SENTENCES[i].contains("Radiobutton") && SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")) {
 			
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")){
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")){
 				prf +=1;
 				Common.mouseOverElement(Constans.RadioButton1_AddressTyp, Constans.RadioButton1_Address);
 				logger.info("Radiobutton/überfahren erfolgreich!");
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")){
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")){
 				prf +=1;
 				Common.mouseOverElement(Constans.RadioButton2_AddressTyp, Constans.RadioButton2_Address);
 				logger.info("Radiobutton/überfahren erfolgreich!");
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")){
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")){
 				prf +=1;
 				Common.mouseOverElement(Constans.RadioButton3_AddressTyp, Constans.RadioButton3_Address);
 				logger.info("Radiobutton/überfahren erfolgreich!");
 			}
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Bar")){
+				prf +=1;
+				Common.mouseOverElement(Constans.RadioButton4_AddressTyp, Constans.RadioButton4_Address);
+				logger.info("Radiobutton/überfahren erfolgreich!");
+			}
 		}
-		
-//Tabelle1
+
+//Tabelle: Käsewahl oder Käsetabelle
 		//Tabelle/Zeile/Spalte/Linksklick/auswähle
-		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
+		if (SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl")||SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
 			prf +=1;
 			Common.leftClickTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
 			logger.info("Linksklick/auswähle erfolgreich!");
 		}
 		//Tabelle/Zeile/Spalte/Duppelklick/auswähle
-		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Doppelklick") && SENTENCES[i].contains("auswähle")) {
+		if (SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl")||SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Doppelklick") && SENTENCES[i].contains("auswähle")) {
 			prf +=1;
 			Common.duppleClickTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
 			logger.info("Duppelklick/auswähle erfolgreich!");
 		}
 		//Tabelle/Zeile/Spalte/Rechtsklick/auswähle
-		if (SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
+		if (SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl")||SENTENCES[i].contains("Käsetabelle"))&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
 			prf +=1;
 			Common.rightClickTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
 			logger.info("Rechtsklick/auswähle erfolgreich!");
 		}
 		// Tabelle/Zeile/Spalte/Wert/eingebe
-		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("Wert") && SENTENCES[i].contains("eingebe")) {
+		if (SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl")||SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("Wert") && SENTENCES[i].contains("eingebe")) {
 			prf +=1;
 			Common.inputTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], quoteText[3], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
 			logger.info("Wert/eingebe erfolgreich!");
 		}
 		// Tabelle/Zeile/Liste/eingebe
-		if  (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Liste [")&& SENTENCES[i].contains("eingebe")) {
+		if  (SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl")||SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Liste [")&& SENTENCES[i].contains("eingebe")) {
 			prf +=1;
 			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
 			Common.inputTabelleZeileListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt, eckKlmText );	
 			logger.info("Liste/eingebe erfolgreich!");
 		}
 		// Tabelle/Spalte/Liste/eingebe
-		if  (SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")&& SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Liste [")&& SENTENCES[i].contains("eingebe")) {
+		if  (SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl")||SENTENCES[i].contains("Käsetabelle"))&& SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Liste [")&& SENTENCES[i].contains("eingebe")) {
 			prf +=1;
 			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
 			Common.inputTabelleSpalteListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt, eckKlmText );
 			logger.info("Liste/eingebe erfolgreich!");
 		}
 		// Tabelle/Zeile/Spalte/Wert/markiere
-		if (SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("Wert") && SENTENCES[i].contains("markiere")) {
+		if (SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl")||SENTENCES[i].contains("Käsetabelle"))&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("Wert") && SENTENCES[i].contains("markiere")) {
 			prf +=1;
+			String outputText = Common.htmlTextGetter(Common.IDKaesewahl(quoteText[1], quoteText[2]));
+			System.out.println(outputText);
+			if(outputText.equals(quoteText[3])) {
 			Common.valueCellMarker(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2],Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
 			logger.info("Wert/markiere erfolgreich!");
+			}else{
+				logger.info("Der Wert zur Markierung NICHT gefunden");
+			}
 		}
 		// Tabelle/Zeile/Spalte/überfahren
-		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")){
+		if (SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl")||SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")){
 			prf +=1;
 			Common.mouseOverTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
 			logger.info("Zeile/Spalte/überfahren erfolgreich!");
-		}	
-		
+		}
+
+//Tabelle1
+//		//Tabelle/Zeile/Spalte/Linksklick/auswähle
+//		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
+//			prf +=1;
+//			Common.leftClickTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
+//			logger.info("Linksklick/auswähle erfolgreich!");
+//		}
+//		//Tabelle/Zeile/Spalte/Duppelklick/auswähle
+//		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Doppelklick") && SENTENCES[i].contains("auswähle")) {
+//			prf +=1;
+//			Common.duppleClickTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
+//			logger.info("Duppelklick/auswähle erfolgreich!");
+//		}
+//		//Tabelle/Zeile/Spalte/Rechtsklick/auswähle
+//		if (SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
+//			prf +=1;
+//			Common.rightClickTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
+//			logger.info("Rechtsklick/auswähle erfolgreich!");
+//		}
+//		// Tabelle/Zeile/Spalte/Wert/eingebe
+//		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("Wert") && SENTENCES[i].contains("eingebe")) {
+//			prf +=1;
+//			Common.inputTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], quoteText[3], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
+//			logger.info("Wert/eingebe erfolgreich!");
+//		}
+//		// Tabelle/Zeile/Liste/eingebe
+//		if  (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Liste [")&& SENTENCES[i].contains("eingebe")) {
+//			prf +=1;
+//			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
+//			Common.inputTabelleZeileListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt, eckKlmText );	
+//			logger.info("Liste/eingebe erfolgreich!");
+//		}
+//		// Tabelle/Spalte/Liste/eingebe
+//		if  (SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")&& SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Liste [")&& SENTENCES[i].contains("eingebe")) {
+//			prf +=1;
+//			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
+//			Common.inputTabelleSpalteListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt, eckKlmText );
+//			logger.info("Liste/eingebe erfolgreich!");
+//		}
+//		// Tabelle/Zeile/Spalte/Wert/markiere
+//		if (SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("Wert") && SENTENCES[i].contains("markiere")) {
+//			prf +=1;
+//			Common.valueCellMarker(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2],Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
+//			logger.info("Wert/markiere erfolgreich!");
+//		}
+//		// Tabelle/Zeile/Spalte/überfahren
+//		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")){
+//			prf +=1;
+//			Common.mouseOverTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
+//			logger.info("Zeile/Spalte/überfahren erfolgreich!");
+//		}	
+
 //Tabelle2
 		//Tabelle/Zeile/Spalte/Linksklick/auswähle
 		if (SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle2") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
@@ -484,8 +612,14 @@ public class KeywordsEditor {
 		// Tabelle/Zeile/Spalte/Wert/markiere
 		if (SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle2") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("Wert") && SENTENCES[i].contains("markiere")) {
 			prf +=1;
+			String outputText = Common.htmlTextGetter(Common.IDKaesewahl(quoteText[1], quoteText[2]));
+			System.out.println(outputText);
+			if(outputText.equals(quoteText[3])) {
 			Common.valueCellMarker(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], quoteText[2],Constans.Table2_ColumnstagName, Constans.Table2_ColumnstagNameInhalt);
 			logger.info("Wert/markiere erfolgreich!");
+			} else {
+				logger.info("Wert zur Markierung NICHT gefunden");
+			}
 		}
 		// Tabelle/Zeile/Spalte/überfahren
 		if (SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle2")&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte")&& SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")){
@@ -496,9 +630,9 @@ public class KeywordsEditor {
 		
 //Dropdownliste
 		//Dropdown/Feld/Linksklick/auswähle
-		if (SENTENCES[i].contains("Dropdownliste") && SENTENCES[i].contains("Feld mit dem Namen") && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
+		if (SENTENCES[i].contains("Dropdownliste") && SENTENCES[i].contains("den Wert") && SENTENCES[i].contains("Linksklick") && SENTENCES[i].contains("auswähle")) {
 			System.out.println(quoteText[1]);
-			if(SENTENCES[i].contains("dropdown1")) {
+			if(SENTENCES[i].contains("Lieferoptionen") || SENTENCES[i].contains("Fahrzeugwahl")) {
 				prf +=1;
 				Common.botstrapDropDown(Constans.DropDown1_AddressTyp, Constans.DropDown1_Address, Constans.DropDown1_MenuAddressTyp, Constans.DropDown1_MenuAddress, quoteText[1]);
 				logger.info("Dropdown Linksklick/auswähle erfolgreich!");
@@ -511,7 +645,7 @@ public class KeywordsEditor {
 		}
 		//Dropdown/Feld/überfahren
 		if (SENTENCES[i].contains("Dropdownliste") && SENTENCES[i].contains("über") && SENTENCES[i].contains("fahre")) {
-			if(SENTENCES[i].contains("dropdown1")) {
+			if(SENTENCES[i].contains("Lieferoptionen") || SENTENCES[i].contains("Fahrzeugwahl")) {
 				prf +=1;
 				Common.MouseOverBotstrapDropDown(Constans.DropDown1_AddressTyp, Constans.DropDown1_Address);
 				logger.info("Dropdown Feld/überfahren erfolgreich!");
@@ -590,8 +724,8 @@ public class KeywordsEditor {
 		if(SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("angezeigt") && (SENTENCES[i].contains("Text") || SENTENCES[i].contains("Wert"))
 				&& !(SENTENCES[i].contains("Wert >") || SENTENCES[i].contains("Wert <") || SENTENCES[i].contains("Wert =")) && !(SENTENCES[i].contains("Tabelle"))&& !(SENTENCES[i].contains("Dropdownliste"))
 				&& !(SENTENCES[i].contains("der Link")) && !(SENTENCES[i].contains("Kombobox"))){
-			Thread.sleep(2000);
-			if(SENTENCES[i].contains("Textfeld")  && (SENTENCES[i].contains("Eingabefeld1")||SENTENCES[i].contains("eingabefeld1"))) {
+			Thread.sleep(1000);
+			if(SENTENCES[i].contains("Textfeld")  && (SENTENCES[i].contains("Name")||SENTENCES[i].contains("eingabefeld1"))) {
 				prf +=1;
 				String quoteText2 = quoteText[1].toString();
 				String outputText_Istwert = Common.getTextByElement(Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address);
@@ -603,20 +737,64 @@ public class KeywordsEditor {
 					logger.info(quoteText2 + " wird angezeigt");
 				} else {
 					logger.warning(quoteText2 + " wird NICHT angezeigt");
-					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\"+quoteText2+"NICHTangezeigt.jpg");			
+					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\"+quoteText2+"NICHTangezeigt1.jpg");			
 					errorLog1.add("ERROR");
 				}
 			}
-			if(SENTENCES[i].contains("Ausgabefeld") && (SENTENCES[i].contains("Ausgabefeld1")||SENTENCES[i].contains("ausgabefeld1"))) {
+			if(SENTENCES[i].contains("Textfeld")  && (SENTENCES[i].contains("Adresse")||SENTENCES[i].contains("eingabefeld2"))) {
+				prf +=1;
+				String quoteText2 = quoteText[1].toString();
+				String outputText_Istwert = Common.getTextByElement(Constans.Textfeld2_AddressTyp, Constans.Textfeld2_Address);
+				System.out.println("textfeld2: "+outputText_Istwert);
+				if(outputText_Istwert.equals("")||outputText_Istwert.equals(null))
+				outputText_Istwert = Common.htmlTextGetterHR("eingabefeld2");
+				System.out.println(outputText_Istwert.equals(quoteText2) + " --> " + outputText_Istwert);
+				if(outputText_Istwert.equals(quoteText2)) {
+					logger.info(quoteText2 + " wird angezeigt");
+				} else {
+					logger.warning(quoteText2 + " wird NICHT angezeigt");
+					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\"+quoteText2+"NICHTangezeigt2.jpg");			
+					errorLog1.add("ERROR");
+				}
+			}
+			if(SENTENCES[i].contains("Ausgabefeld") && (SENTENCES[i].contains("Preisausgabe")||SENTENCES[i].contains("ausgabefeld1"))) {
 				prf +=1;
 				String quoteText2 = quoteText[1].toString();
 				String outputText_Istwert = Common.getTextByElement(Constans.Ausgabefeld1_AddressTyp, Constans.Ausgabefeld1_Address);
+				System.out.println("Text2: "+quoteText2);
+				System.out.println(Common.ConvertUTF8To1252(outputText_Istwert).equals(quoteText2) + " --> " + Common.ConvertUTF8To1252(outputText_Istwert));
+				if (outputText_Istwert.equals(quoteText2)) {
+					logger.info(quoteText2+ " wird angezeigt");
+				} else {
+					logger.warning("\""+quoteText2 + "\": NICHT angezeigt");
+					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\Bild1NICHTangezeigt.jpg");			
+					errorLog1.add("ERROR");					
+				}
+				}
+			if(SENTENCES[i].contains("Ausgabefeld") && (SENTENCES[i].contains("Bestellausgabe")||SENTENCES[i].contains("ausgabefeld2"))) {
+				prf +=1;
+				String quoteText2 = quoteText[1].toString();
+				String outputText_Istwert = Common.getTextByElement(Constans.Ausgabefeld2_AddressTyp, Constans.Ausgabefeld2_Address);
 				System.out.println(outputText_Istwert.equals(quoteText2) + " --> " + outputText_Istwert);
 				if (outputText_Istwert.equals(quoteText2)) {
 					logger.info(outputText_Istwert+ " wird angezeigt");
 				} else {
-					logger.warning(outputText_Istwert + " NICHT angezeigt");
-					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\"+quoteText2+"NICHTangezeigt.jpg");			
+					logger.warning(outputText_Istwert + ": NICHT angezeigt");
+					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\Bild2NICHTangezeigt.jpg");			
+					errorLog1.add("ERROR");					
+				}
+				}
+			if(SENTENCES[i].contains("Ausgabefeld") && (SENTENCES[i].contains("Adressausgabe")||SENTENCES[i].contains("ausgabefeld3"))) {
+				prf +=1;
+				System.out.println("text1 is: "+quoteText[1]);
+				String quoteText2 = quoteText[1].toString();
+				String outputText_Istwert = Common.getTextByElement(Constans.Ausgabefeld3_AddressTyp, Constans.Ausgabefeld3_Address);
+				System.out.println(outputText_Istwert.equals(quoteText2) + " --> " + outputText_Istwert);
+				if (outputText_Istwert.equals(quoteText2)) {
+					logger.info(outputText_Istwert+ " wird angezeigt");
+				} else {
+					logger.warning(outputText_Istwert + ": NICHT angezeigt");
+					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\Bild3NICHTangezeigt.jpg");			
 					errorLog1.add("ERROR");					
 				}
 				}
@@ -625,15 +803,27 @@ public class KeywordsEditor {
 		if(SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("angezeigt") && SENTENCES[i].contains("Wert") && !SENTENCES[i].contains("Tabelle")
 				&& (SENTENCES[i].contains("Wert >") || SENTENCES[i].contains("Wert <") || SENTENCES[i].contains("Wert ="))) {
 			String wert1String = null;
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			float wert2 = Float.parseFloat(quoteText[1]);
-			if(SENTENCES[i].contains("Textfeld")  && (SENTENCES[i].contains("Eingabefeld1")||SENTENCES[i].contains("eingabefeld1"))) {
+			if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Name")||SENTENCES[i].contains("eingabefeld1"))) {
+				prf +=1;
+				wert1String = Common.getTextByElement(Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address);
+			}
+			if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Adresse")||SENTENCES[i].contains("eingabefeld2"))) {
 				prf +=1;
 				wert1String = Common.getTextByElement(Constans.Textfeld2_AddressTyp, Constans.Textfeld2_Address);
 			}
-			if(SENTENCES[i].contains("Ausgabefeld") && (SENTENCES[i].contains("Ausgabefeld1")||SENTENCES[i].contains("ausgabefeld1"))) {
+			if(SENTENCES[i].contains("Ausgabefeld") && (SENTENCES[i].contains("Preisausgabe")||SENTENCES[i].contains("ausgabefeld1"))) {
 				prf +=1;
 				wert1String = Common.getTextByElement(Constans.Ausgabefeld1_AddressTyp, Constans.Ausgabefeld1_Address);
+			}
+			if(SENTENCES[i].contains("Ausgabefeld") && (SENTENCES[i].contains("Bestellausgabe")||SENTENCES[i].contains("ausgabefeld2"))) {
+				prf +=1;
+				wert1String = Common.getTextByElement(Constans.Ausgabefeld2_AddressTyp, Constans.Ausgabefeld2_Address);
+			}
+			if(SENTENCES[i].contains("Ausgabefeld") && (SENTENCES[i].contains("Adressausgabe")||SENTENCES[i].contains("ausgabefeld3"))) {
+				prf +=1;
+				wert1String = Common.getTextByElement(Constans.Ausgabefeld3_AddressTyp, Constans.Ausgabefeld3_Address);
 			}
 			if(wert1String != null) {
 			float wert1 = Float.parseFloat(wert1String);
@@ -702,7 +892,7 @@ public class KeywordsEditor {
 		if(SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Schaltfäche") && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("angezeigt")) {
 			Thread.sleep(3000);
 			String quoteText2 = quoteText[1].toString();
-			if(SENTENCES[i].contains("schaltfläche1")||SENTENCES[i].contains("Schaltfläche1")) {
+			if(SENTENCES[i].contains("Preis berechnen")||SENTENCES[i].contains("Preisrechner")){
 				prf +=1;
 				String outputText_Istwert = Common.getTextByElement(Constans.Schalflaeche1_AddressTyp, Constans.Schalflaeche1_Address);
 				System.out.println(outputText_Istwert.equals(quoteText2) + " --> " + outputText_Istwert);
@@ -714,7 +904,7 @@ public class KeywordsEditor {
 					errorLog1.add("ERROR");	
 				}
 			}
-			if(SENTENCES[i].contains("schaltfläche2")||SENTENCES[i].contains("Schaltfläche2")) {
+			if(SENTENCES[i].contains("Pizza bestellen")||SENTENCES[i].contains("Bestellbutton")){
 				prf +=1;
 				String outputText_Istwert = Common.getTextByElement(Constans.Schalflaeche2_AddressTyp, Constans.Schalflaeche2_Address);
 				System.out.println(outputText_Istwert.equals(quoteText2) + " --> " + outputText_Istwert);
@@ -733,17 +923,21 @@ public class KeywordsEditor {
 		if(SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Radiobutton") && SENTENCES[i].contains("angewählt")) {
 			boolean status=false;
 			String quoteText1 = quoteText[0].toString();
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.RadioButton1_AddressTyp, Constans.RadioButton1_Address);
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.RadioButton2_AddressTyp, Constans.RadioButton2_Address);
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.RadioButton3_AddressTyp, Constans.RadioButton3_Address);
+			}
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Bar")) {
+				prf +=1;
+				status = Common.checkRadioButtonAndCheckBox(Constans.RadioButton4_AddressTyp, Constans.RadioButton4_Address);
 			}
 			if(status == true) {
 				//System.out.println("Radiobutton "+quoteText1+" aktuell angewählt");
@@ -759,17 +953,21 @@ public class KeywordsEditor {
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Radiobutton") && SENTENCES[i].contains("abgewählt")) {
 			String quoteText1 = quoteText[0].toString();
 			boolean status=true;
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Mastercard")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.RadioButton1_AddressTyp, Constans.RadioButton1_Address);
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Visa")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.RadioButton2_AddressTyp, Constans.RadioButton2_Address);
 			}
-			if(SENTENCES[i].contains("radiobutton1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")) {
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("American Express")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.RadioButton3_AddressTyp, Constans.RadioButton3_Address);
+			}
+			if(SENTENCES[i].contains("Zahlungsart") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Bar")) {
+				prf +=1;
+				status = Common.checkRadioButtonAndCheckBox(Constans.RadioButton4_AddressTyp, Constans.RadioButton4_Address);
 			}
 			if (status == true) {
 				logger.warning("Radiobutton "+quoteText1+" aktuell NICHT abgewählt");
@@ -784,21 +982,33 @@ public class KeywordsEditor {
 		if(SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Checkbox") && SENTENCES[i].contains("angewählt")) {
 			boolean status = false;
 			String quoteText1 = quoteText[0].toString();
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Salami")) {
+			if(SENTENCES[i].contains("Tomate")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address);
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Schinken")) {
+			if(SENTENCES[i].contains("Salami")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox2_AddressTyp, Constans.CheckBox2_Address);
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Sardellen")) {
+			if(SENTENCES[i].contains("Schinken")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox3_AddressTyp, Constans.CheckBox3_Address);
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Ananas")) {
+			if(SENTENCES[i].contains("Sardellen")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox4_AddressTyp, Constans.CheckBox4_Address);
+			}
+			if(SENTENCES[i].contains("Ananas")) {
+				prf +=1;
+				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox5_AddressTyp, Constans.CheckBox5_Address);
+			}
+			if(SENTENCES[i].contains("Artischocken")) {
+				prf +=1;
+				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox6_AddressTyp, Constans.CheckBox6_Address);
+			}
+			if(SENTENCES[i].contains("Champignons")) {
+				prf +=1;
+				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox7_AddressTyp, Constans.CheckBox7_Address);
 			}
 			if(status == true) {
 				//System.out.println("Checkbox "+quoteText1+" aktuell angewählt");
@@ -813,21 +1023,33 @@ public class KeywordsEditor {
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Checkbox") && SENTENCES[i].contains("abgewählt")) {
 			String quoteText1 = quoteText[0].toString();
 			boolean status = true;
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Salami")) {
+			if(SENTENCES[i].contains("Tomate")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox1_AddressTyp, Constans.CheckBox1_Address);
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Schinken")) {
+			if(SENTENCES[i].contains("Salami")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox2_AddressTyp, Constans.CheckBox2_Address);
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Sardellen")) {
+			if(SENTENCES[i].contains("Schinken")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox3_AddressTyp, Constans.CheckBox3_Address);
 			}
-			if(SENTENCES[i].contains("checkbox1") && SENTENCES[i].contains("Option")&& SENTENCES[i].contains("Ananas")) {
+			if(SENTENCES[i].contains("Sardellen")) {
 				prf +=1;
 				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox4_AddressTyp, Constans.CheckBox4_Address);
+			}
+			if(SENTENCES[i].contains("Ananas")) {
+				prf +=1;
+				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox5_AddressTyp, Constans.CheckBox5_Address);
+			}
+			if(SENTENCES[i].contains("Artischocken")) {
+				prf +=1;
+				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox6_AddressTyp, Constans.CheckBox6_Address);
+			}
+			if(SENTENCES[i].contains("Champignons")) {
+				prf +=1;
+				status = Common.checkRadioButtonAndCheckBox(Constans.CheckBox7_AddressTyp, Constans.CheckBox7_Address);
 			}
 			if (status == true) {
 				logger.warning("Checkbox "+quoteText1+" aktuell NICHT abgewählt");
@@ -844,9 +1066,9 @@ public class KeywordsEditor {
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Text") && SENTENCES[i].contains("angezeigt") 
 				&& !(SENTENCES[i].contains("Wert >") || SENTENCES[i].contains("Wert <") || SENTENCES[i].contains("Wert ="))){
 			String outputText=null;
-			if(SENTENCES[i].contains("tabelle1")) {
+			if(SENTENCES[i].contains("Käseart")) {
 				prf +=1;
-				outputText = Common.htmlTextGetter(Common.IDTabelle1(quoteText[1], quoteText[2]));
+				outputText = Common.htmlTextGetter(Common.IDKaesewahl(quoteText[1], quoteText[2]));
 				System.out.println("[row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : " + outputText.equals(quoteText[3]));
 				if(outputText.equals(quoteText[3])) {
 					logger.info("Tabelle1 [row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : is " + outputText.equals(quoteText[3]));
@@ -856,7 +1078,7 @@ public class KeywordsEditor {
 					errorLog1.add("ERROR");
 				}
 			}
-			if(!SENTENCES[i].contains("tabelle1") && !SENTENCES[i].contains("tabelle2")) {
+			if(!SENTENCES[i].contains("Käsewahl") && !SENTENCES[i].contains("tabelle2")) {
 				prf +=1;
 				outputText =  Common.searchTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt).getText();
 				Thread.sleep(2000);
@@ -872,13 +1094,13 @@ public class KeywordsEditor {
 		}
 		// Tabelle/Zeile/Spalte/Wert2 ><= Wert1 angezeigt
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("angezeigt") && SENTENCES[i].contains("Wert")
-				&& SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")
+				&& SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
 				&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && (SENTENCES[i].contains("Wert >")
 						|| SENTENCES[i].contains("Wert <") || SENTENCES[i].contains("Wert ="))) {
 			String cellText = Common.searchTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt).getText();
 			float wert2 = Float.parseFloat(quoteText[3]);
 			if (cellText.equals("") || cellText.equals(null)) {
-				String cell = Common.IDTabelle1(quoteText[1], quoteText[2]);
+				String cell = Common.IDKaesewahl(quoteText[1], quoteText[2]);
 				cellText = Common.htmlTextGetter(cell);
 				float wert1 = Float.parseFloat(cellText);
 				if (SENTENCES[i].contains("Wert >")) {
@@ -959,7 +1181,7 @@ public class KeywordsEditor {
 			}
 		}
 		//Tabelle/Zeile/Wert/zu finden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
 				&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("zu finden")
 				&& !SENTENCES[i].contains("Spalte")) {
 			prf +=1;
@@ -968,7 +1190,7 @@ public class KeywordsEditor {
 			Label1: for (int k = 0; k < rowElements.size(); k++) {
 				String outputText = rowElements.get(k).getText();
 				if (outputText.equals("") || outputText.equals(null)) {
-					String[] row = Common.IDTabelle1Row(quoteText[1]);
+					String[] row = Common.IDKaesewahlRow(quoteText[1]);
 					for (int j = 0; j < row.length; j++) {
 						outputText = Common.htmlTextGetter(row[j]);
 						if (outputText.equals(quoteText[2])) {
@@ -995,7 +1217,7 @@ public class KeywordsEditor {
 		}
 		
 		//Tabelle/Spalte/Wert/zu finden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
 				&& SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Wert")
 				&& SENTENCES[i].contains("zu finden") && !SENTENCES[i].contains("Zeile")) {
 			prf +=1;
@@ -1004,7 +1226,7 @@ public class KeywordsEditor {
 			Label1: for (int k = 0; k < colElements.size(); k++) {
 				String outputText = colElements.get(k).getText();
 				if (outputText.equals("") || outputText.equals(null)) {
-					String[] cols = Common.IDTabelle1Cell(quoteText[1]);
+					String[] cols = Common.IDKaesewahlCell(quoteText[1]);
 					for (int j = 0; j < cols.length; j++) {
 						outputText = Common.htmlTextGetter(cols[j]);
 						if (outputText.equals(quoteText[2])) {
@@ -1031,9 +1253,9 @@ public class KeywordsEditor {
 		}
 		
 		// Tabelle/Zeile/alle Werte ><= Wert1 angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
 				&& SENTENCES[i].contains("Zeile") && !SENTENCES[i].contains("Spalte")
-				&& SENTENCES[i].contains("alle Werte") && SENTENCES[i].contains("angezeigt werden")
+				&& SENTENCES[i].contains("alle") && SENTENCES[i].contains("angezeigt werden")
 				&& (SENTENCES[i].contains("Werte >") || SENTENCES[i].contains("Werte <")|| SENTENCES[i].contains("Werte ="))) {		
 			String textWert1 = null;
 			float wert2 = Float.parseFloat(quoteText[2]);
@@ -1042,7 +1264,7 @@ public class KeywordsEditor {
 				textWert1 = rowElements.get(k).getText();
 			
 			if (textWert1.equals("") || textWert1.equals(null)) {
-				String[] cells = Common.IDTabelle1Row(quoteText[1]);
+				String[] cells = Common.IDKaesewahlRow(quoteText[1]);
 				for (int n = 0; n < cells.length; n++) {
 					textWert1 = Common.htmlTextGetter(cells[n]);
 					float wert1 = Float.parseFloat(textWert1);
@@ -1127,9 +1349,9 @@ public class KeywordsEditor {
 		}}
 		
 		// Tabelle/Spalte/alle Werte ><= Wert1 angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
 				&& SENTENCES[i].contains("Spalte") && !SENTENCES[i].contains("Zeile")
-				&& SENTENCES[i].contains("alle Werte") && SENTENCES[i].contains("angezeigt werden")
+				&& SENTENCES[i].contains("alle") && SENTENCES[i].contains("angezeigt werden")
 				&& (SENTENCES[i].contains("Werte >") || SENTENCES[i].contains("Werte <") || SENTENCES[i].contains("Werte ="))) {
 			float wert2 = Float.parseFloat(quoteText[2]);
 			List<WebElement> colElements = Common.searchTableColumns(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt);
@@ -1137,7 +1359,7 @@ public class KeywordsEditor {
 			Label1: for (int k = 0; k < colElements.size(); k++) {
 				String textWert1 = colElements.get(k).getText();
 				if (textWert1.equals("") || textWert1.equals(null)) {
-					String[] cells = Common.IDTabelle1Cell(quoteText[1]);
+					String[] cells = Common.IDKaesewahlCell(quoteText[1]);
 					for (int n = 0; n < cells.length; n++) {
 						textWert1 = Common.htmlTextGetter(cells[n]);
 						float wert1 = Float.parseFloat(textWert1);
@@ -1224,7 +1446,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/Spalte/maximal/minimal/genau Werte-Anzahl angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle1")&& SENTENCES[i].contains("Spalte") && !SENTENCES[i].contains("Zeile")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")&& SENTENCES[i].contains("Spalte") && !SENTENCES[i].contains("Zeile")
 				&& (SENTENCES[i].contains("maximal")||SENTENCES[i].contains("minimal")||SENTENCES[i].contains("genau")) && SENTENCES[i].contains("Werte angezeigt werden")) {
 			int count = 0;
 			String wertString1 = null;
@@ -1237,7 +1459,7 @@ public class KeywordsEditor {
 				}
 			}
 			if(count == 0) {
-					String[] cells = Common.IDTabelle1Cell(quoteText[1]);
+					String[] cells = Common.IDKaesewahlCell(quoteText[1]);
 					for (int n = 0; n < cells.length; n++) {
 						wertString1 = Common.htmlTextGetter(cells[n]);
 						if((wertString1 != null) && !(wertString1.isEmpty())) {
@@ -1280,7 +1502,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/Zeile/maximal/minimal/genau Werte-Anzahl angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && !SENTENCES[i].contains("Spalte")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("Zeile") && !SENTENCES[i].contains("Spalte")
 				&& (SENTENCES[i].contains("maximal")||SENTENCES[i].contains("minimal")||SENTENCES[i].contains("genau")) && SENTENCES[i].contains("Werte angezeigt werden")) {
 			String wertString1 = null;
 			int count = 0;
@@ -1293,7 +1515,7 @@ public class KeywordsEditor {
 				}
 			}
 			if(count == 0) {
-					String[] cells = Common.IDTabelle1Row(quoteText[1]);
+					String[] cells = Common.IDKaesewahlRow(quoteText[1]);
 					for (int n = 0; n < cells.length; n++) {
 						wertString1 = Common.htmlTextGetter(cells[n]);
 						if((wertString1 != null) && !(wertString1.isEmpty())) {
@@ -1336,13 +1558,13 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/Zeile/Liste/angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Liste") && SENTENCES[i].contains("angezeigt werden")) {
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Liste") && SENTENCES[i].contains("angezeigt werden")) {
 			prf +=1;
 			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
 			for(int k=0; k<eckKlmText.length; k++) {
-				System.out.println("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt)[k+1]));
-				if(eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt)[k+1])) {
-					logger.info("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt)[k+1]));
+				System.out.println("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table1_NameKasewahl,Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt)[k+1]));
+				if(eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table1_NameKasewahl, Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt)[k+1])) {
+					logger.info("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table1_NameKasewahl,Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt)[k+1]));
 				}else {
 					logger.warning("Vergleich Soll/Ist Liste["+k+"]: FALSE");
 					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\ListeZeileWertNOTfound.jpg");			
@@ -1351,13 +1573,13 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/Spalte/Liste/angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Liste") && SENTENCES[i].contains("angezeigt werden")) {
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Liste") && SENTENCES[i].contains("angezeigt werden")) {
 			prf +=1;
 			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
 			for(int k=0; k<eckKlmText.length; k++) {
-				System.out.println("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt)[k+1]));
-				if(eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagNameInhalt)[k+1])) {
-					logger.info("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt)[k+1]));
+				System.out.println("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table1_NameKasewahl,Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt)[k+1]));
+				if(eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table1_NameKasewahl,Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt)[k+1])) {
+					logger.info("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table1_NameKasewahl,Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt)[k+1]));
 				}else {
 					logger.warning("Vergleich Soll/Ist Liste["+k+"]: FALSE");
 					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\ListeSpalteWertNOTfound.jpg");			
@@ -1366,7 +1588,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/beliebigen Zeile/ein Wert in der Spalte X/ ein Wert in der Spalte Y/vorhanden ist
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("beliebigen Zeile") && SENTENCES[i].contains("ein Wert") && SENTENCES[i].contains("in der Spalte")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("beliebigen Zeile") && SENTENCES[i].contains("ein Wert") && SENTENCES[i].contains("in der Spalte")
 				&& SENTENCES[i].contains("und ein Wert") && SENTENCES[i].contains("vorhanden ist")) {
 			prf +=1;
 			int k = 0; int m = 0; int n = 0; int j = 0;
@@ -1382,7 +1604,7 @@ public class KeywordsEditor {
 				}
 			}
 			if (k == 0) {
-				String[] cells = Common.IDTabelle1Cell(quoteText[2]);
+				String[] cells = Common.IDKaesewahlCell(quoteText[2]);
 				for (int t = 0; t < cells.length; t++) {
 					String cellText = Common.htmlTextGetter(cells[t]);
 					if (quoteText[1].equals(cellText)) {
@@ -1409,7 +1631,7 @@ public class KeywordsEditor {
 				}
 			}
 			if (n == 0) {
-				String[] cells = Common.IDTabelle1Cell(quoteText[4]);
+				String[] cells = Common.IDKaesewahlCell(quoteText[4]);
 				for (int t = 0; t < cells.length; t++) {
 					String cellText = Common.htmlTextGetter(cells[t]);
 					if (quoteText[3].equals(cellText)) {
@@ -1428,7 +1650,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/beliebigen Spalte/ein Wert in der Zeile X/ ein Wert in der Zeile Y/vorhanden ist
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("tabelle1") && SENTENCES[i].contains("beliebigen Spalte") && SENTENCES[i].contains("ein Wert") && SENTENCES[i].contains("in der Zeile")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("beliebigen Spalte") && SENTENCES[i].contains("ein Wert") && SENTENCES[i].contains("in der Zeile")
 				&& SENTENCES[i].contains("und ein Wert") && SENTENCES[i].contains("vorhanden ist")) {
 			prf +=1;
 			int k = 0; int m = 0; int n = 0; int j = 0;
@@ -1444,7 +1666,7 @@ public class KeywordsEditor {
 				}
 			}
 			if (k == 0) {
-				String[] cells = Common.IDTabelle1Row(quoteText[2]);
+				String[] cells = Common.IDKaesewahlRow(quoteText[2]);
 				for (int t = 0; t < cells.length; t++) {
 					String cellText = Common.htmlTextGetter(cells[t]);
 					if (quoteText[1].equals(cellText)) {
@@ -1471,7 +1693,7 @@ public class KeywordsEditor {
 				}
 			}
 			if (n == 0) {
-				String[] cells = Common.IDTabelle1Row(quoteText[4]);
+				String[] cells = Common.IDKaesewahlRow(quoteText[4]);
 				for (int t = 0; t < cells.length; t++) {
 					String cellText = Common.htmlTextGetter(cells[t]);
 					if (quoteText[3].equals(cellText)) {
@@ -1593,7 +1815,7 @@ public class KeywordsEditor {
 		
 		// Tabelle/Zeile/alle Werte ><= Wert1 angezeigt werden
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle2") && SENTENCES[i].contains("Zeile") && !SENTENCES[i].contains("Spalte")
-				&& SENTENCES[i].contains("alle Werte") && SENTENCES[i].contains("angezeigt werden")
+				&& SENTENCES[i].contains("alle") && SENTENCES[i].contains("angezeigt werden")
 				&& (SENTENCES[i].contains("Werte >") || SENTENCES[i].contains("Werte <")|| SENTENCES[i].contains("Werte ="))) {
 			float wert2 = Float.parseFloat(quoteText[2]);
 			List<WebElement> rowElements = Common.searchTableRows(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagNameInhalt);
@@ -1641,7 +1863,7 @@ public class KeywordsEditor {
 		
 		// Tabelle/Spalte/alle Werte ><= Wert1 angezeigt werden
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("tabelle2") && SENTENCES[i].contains("Spalte") && !SENTENCES[i].contains("Zeile")
-				&& SENTENCES[i].contains("alle Werte") && SENTENCES[i].contains("angezeigt werden")
+				&& SENTENCES[i].contains("alle") && SENTENCES[i].contains("angezeigt werden")
 				&& (SENTENCES[i].contains("Werte >") || SENTENCES[i].contains("Werte <")|| SENTENCES[i].contains("Werte ="))) {
 			float wert2 = Float.parseFloat(quoteText[2]);
 			List<WebElement> colElements = Common.searchTableColumns(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1],Constans.Table2_ColumnstagName, Constans.Table2_ColumnstagNameInhalt);
@@ -1785,9 +2007,9 @@ public class KeywordsEditor {
 			prf +=1;
 			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
 			for(int k=0; k<eckKlmText.length; k++) {
-				System.out.println("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagNameInhalt)[k+1]));	
-				if(eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagNameInhalt)[k+1])) {
-					logger.info("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagNameInhalt)[k+1]));	
+				System.out.println("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table2_Name,Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagNameInhalt)[k+1]));	
+				if(eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table2_Name,Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagNameInhalt)[k+1])) {
+					logger.info("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleZeileListe(Constans.Table2_Name,Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagNameInhalt)[k+1]));	
 				}else {
 					logger.warning("Vergleich Soll/Ist Liste["+k+"]: FALSE");
 					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\T2ListeZeileFalse.jpg");			
@@ -1800,9 +2022,9 @@ public class KeywordsEditor {
 			prf +=1;
 			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
 			for(int k=0; k<eckKlmText.length; k++) {
-				System.out.println("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagName, Constans.Table2_ColumnstagNameInhalt)[k+1]));
-				if(eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagName, Constans.Table2_ColumnstagNameInhalt)[k+1])) {
-					logger.info("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagName, Constans.Table2_ColumnstagNameInhalt)[k+1]));	
+				System.out.println("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table2_Name,Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagName, Constans.Table2_ColumnstagNameInhalt)[k+1]));
+				if(eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table2_Name,Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagName, Constans.Table2_ColumnstagNameInhalt)[k+1])) {
+					logger.info("Vergleich Soll/Ist Liste["+k+"]: "  +eckKlmText[k].equals(Common.outputTabelleSpalteListe(Constans.Table2_Name,Constans.Table2_AddressTyp, Constans.Table2_Address, quoteText[1], Constans.Table2_ColumnstagName, Constans.Table2_ColumnstagNameInhalt)[k+1]));	
 				}else {
 					logger.warning("Vergleich Soll/Ist Liste["+k+"]: FALSE");
 					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\T2ListeSpalteFalse.jpg");			
@@ -1884,21 +2106,21 @@ public class KeywordsEditor {
 		}
 
 //Dropdownliste
-		//Dropdownliste/Feld/Name/vorhanden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Dropdownliste") && SENTENCES[i].contains("Feld") && SENTENCES[i].contains("Namen") && SENTENCES[i].contains("vorhanden")) {
+		//Dropdownliste/Wert/vorhanden
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Dropdownliste") && SENTENCES[i].contains("den Wert") && SENTENCES[i].contains("vorhanden")) {
 			prf +=1;
 			System.out.println(quoteText[1].toString());
 			if(Common.elementTextIsVisible(quoteText[1])) {
-				System.out.println("Feld mit dem Name "+quoteText[1]+" ist vorhanden");
-				logger.info("Feld mit dem Name "+quoteText[1]+" ist vorhanden");
+				System.out.println("Den Wert "+quoteText[1]+" ist vorhanden");
+				logger.info("Den Wert "+quoteText[1]+" ist vorhanden");
 			}else {
-				System.out.println("Feld mit dem Name "+quoteText[1]+" ist NICHT vorhanden");
-				logger.warning("Feld mit dem Name "+quoteText[1]+" ist NICHT vorhanden");
+				System.out.println("Den Wert "+quoteText[1]+" ist NICHT vorhanden");
+				logger.warning("Den Wert "+quoteText[1]+" ist NICHT vorhanden");
 				Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\DropdownFeldNameErr.jpg");			
 				errorLog1.add("ERROR");
 			}		
 		}
-		//Dropdownliste/Feld/Name/vorhanden
+		//Dropdownliste/Stelle/Wert/vorhanden
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Dropdownliste") && SENTENCES[i].contains("Stelle") && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("angezeigt")) {
 			prf +=1;
 			int a = 0;

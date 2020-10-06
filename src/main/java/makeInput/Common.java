@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -55,9 +56,9 @@ public class Common {
 	//public static WebDriver driver = new FirefoxDriver();
 	public static WebDriver driver = new ChromeDriver();
 	public static Logger logger=Logger.getLogger("Common");
-	public Common() throws Exception {
-	FileHandler fh = new FileHandler("C:/Users/case/Desktop/HR2020/Logs_Screenshots/TestLogsID.txt");
-	   logger.addHandler(fh);}
+//	public Common() throws Exception {
+//	FileHandler fh = new FileHandler("C:/Users/case/Desktop/HR2020/Logs_Screenshots/TestLogsID.txt");
+//	   logger.addHandler(fh);}
 	
  	public static void openUrl(String inputUrl){	
  		driver.get(inputUrl);
@@ -494,14 +495,14 @@ public class Common {
 						if (ColumnsTagname.equals(InhaltTagname)) {
 							List<WebElement> columns = inputTable.get(j).findElements(By.tagName(InhaltTagname));
 							for (int k = 0; k < columns.size(); k++) {
-								if (k == colInt) { // with Selenium Actions()
+								if (k == colInt) { 
 									target = columns.get(k);
 								}
 							}
 						} else {
 							List<WebElement> columns = inputTable.get(j).findElements(By.tagName(InhaltTagname));
 							for (int k = 0; k < columns.size(); k++) {
-								if (k == (colInt - 1)) { // with Selenium Actions()
+								if (k == (colInt - 1)) {
 									target = columns.get(k);
 								}
 							}
@@ -517,16 +518,16 @@ public class Common {
 			int colInt = -1;
 			List<WebElement> titleRow = inputTable.get(0).findElements(By.tagName(ColumnsTagname));
 			for (int k = 0; k < titleRow.size(); k++) {
-				if (titleRow.get(k).getText().equals(col)) {
+				if (titleRow.get(k).getText().trim().equals(col)) {
 					colInt = k;
 				}
 			}
-			for (int i = 0; i < inputTable.size(); i++) {
+			for (int i = 1; i < inputTable.size(); i++) {
 				{
-					List<WebElement> titleCol = inputTable.get(0).findElements(By.tagName(ColumnsTagname));
+					List<WebElement> titleCol = inputTable.get(i).findElements(By.tagName(ColumnsTagname));
 					for (int j = 0; j < titleCol.size(); j++) {
-						if (titleCol.get(j).getText().equals(row)) {
-							rowInt = j;
+						if (titleCol.get(0).getText().trim().equals(row)) {
+							rowInt = i;
 						}
 					}
 				}
@@ -538,14 +539,14 @@ public class Common {
 					if (ColumnsTagname.equals(InhaltTagname)) {
 						List<WebElement> columns = inputTable.get(i).findElements(By.tagName(InhaltTagname));
 						for (int k = 0; k < columns.size(); k++) {
-							if (k == colInt) { // with Selenium Actions()
+							if (k == colInt) {
 								target = columns.get(k);
 							}
 						}
 					} else {
 						List<WebElement> columns = inputTable.get(i).findElements(By.tagName(InhaltTagname));
 						for (int k = 0; k < columns.size(); k++) {
-							if (k == (colInt - 1)) { // with Selenium Actions()
+							if (k == (colInt - 1)) {
 								target = columns.get(k);
 							}
 						}
@@ -553,7 +554,7 @@ public class Common {
 				}
 			}
 		}	
-		return target;
+		return target; //eine Zelle herausgeben
 	}	
 	//Tabelle: Suche eine Zeile
 	public static List<WebElement> searchTableRows(String tableAddressTyp, String tableAddress, String row, String InhaltTagname) throws Exception {
@@ -715,7 +716,7 @@ public class Common {
 		}	
 	}
 	
-	public static String[] outputTabelleZeileListe(String tableAddressTyp, String tableAddress, String row, String InhaltTagname) throws Exception{
+	public static String[] outputTabelleZeileListe(String tableName, String tableAddressTyp, String tableAddress, String row, String InhaltTagname) throws Exception{
 		String[] outputArray = null;
 		String outputText = null;
 		List<WebElement> columns = searchTableRows(tableAddressTyp, tableAddress, row, InhaltTagname);
@@ -726,11 +727,29 @@ public class Common {
 				outputText1 = "Miljöh";
 			}
 			if(outputText1.equals("")||outputText1.equals(null)) {
-				String[] idsRow = IDTabelle1Row(row);
-				for(int j=0; j<idsRow.length; j++) {
-					outputText1 = htmlTextGetter(idsRow[j]);
-					outputText = outputText + "," + outputText1;	
-				} break Label1;
+				switch (tableName) {
+				case "tabelle1":
+					String[] idsRow = IDTabelle1Row(row);
+					for(int j=0; j<idsRow.length; j++) {
+						outputText1 = htmlTextGetter(idsRow[j]);
+						outputText = outputText + "," + outputText1;	
+					} break Label1;
+					
+				case "Käsewahl":
+					String[] idsRow1 = IDKaesewahlRow(row);
+					for(int j=0; j<idsRow1.length; j++) {
+						outputText1 = htmlTextGetter(idsRow1[j]);
+						outputText = outputText + "," + outputText1;	
+					} break Label1;
+					
+				default:
+					break;
+				}				
+//				String[] idsRow = IDTabelle1Row(row);
+//				for(int j=0; j<idsRow.length; j++) {
+//					outputText1 = htmlTextGetter(idsRow[j]);
+//					outputText = outputText + "," + outputText1;	
+//				} break Label1;
 			} else {
 			outputText = outputText + "," + outputText1; //null + ...
 			}		
@@ -739,7 +758,7 @@ public class Common {
 		return outputArray;
 	}
 	
-	public static String[] outputTabelleSpalteListe(String tableAddressTyp, String tableAddress, String col, String ColumnsTagname, String InhaltTagname) throws Exception{
+	public static String[] outputTabelleSpalteListe(String tableName, String tableAddressTyp, String tableAddress, String col, String ColumnsTagname, String InhaltTagname) throws Exception{
 		String[] outputArray = null;
 		String outputText = "";
 		List<WebElement> rows = searchTableColumns(tableAddressTyp, tableAddress, col, ColumnsTagname, InhaltTagname);
@@ -749,11 +768,29 @@ public class Common {
 				outputText1 = "Miljöh";
 			}
 			if(outputText1.equals("")||outputText1.equals(null)) {
-				String[] idsCol = IDTabelle1Cell(col);
-				for(int j=0; j<idsCol.length; j++) {
-					outputText1 = htmlTextGetter(idsCol[j]);
-					outputText = outputText + "," + outputText1;	
-				} break Label2;
+				switch (tableName) {
+				case "tabelle1":
+					String[] idsCol = IDTabelle1Cell(col);
+					for(int j=0; j<idsCol.length; j++) {
+						outputText1 = htmlTextGetter(idsCol[j]);
+						outputText = outputText + "," + outputText1;	
+					} break Label2;
+
+				case "Käsewahl":
+					String[] idsCol1 = IDKaesewahlCell(col);
+					for(int j=0; j<idsCol1.length; j++) {
+						outputText1 = htmlTextGetter(idsCol1[j]);
+						outputText = outputText + "," + outputText1;	
+					} break Label2;
+					
+				default:
+					break;
+				}
+//				String[] idsCol = IDTabelle1Cell(col);
+//				for(int j=0; j<idsCol.length; j++) {
+//					outputText1 = htmlTextGetter(idsCol[j]);
+//					outputText = outputText + "," + outputText1;	
+//				} break Label2;
 			} else {
 			outputText = outputText + "," + outputText1;
 			}
@@ -803,13 +840,15 @@ public class Common {
 	}
 
 	public static void InputValueInField(String FieldAddressTyp, String FieldAddress, String Value)  {
-		
+		final Charset fromCharset = Charset.forName("windows-1252");
+		 final Charset toCharset = Charset.forName("UTF-8");
+		 String fixed = new String(Value.getBytes(fromCharset), toCharset);
 		try {
 			try {
 				TimeUnit.SECONDS.sleep(3);
 				Common.Locator(FieldAddressTyp, FieldAddress).clear();
-				Common.Locator(FieldAddressTyp, FieldAddress).sendKeys(Value);
-				logger.info("Eingabe erfolgreich");
+				Common.Locator(FieldAddressTyp, FieldAddress).sendKeys(fixed);
+				logger.info("Eingabe 1 erfolgreich");
 			} catch (InterruptedException e) {
 				logger.warning("NOT FOUND INPUTFELD");
 				System.err.println("FAILURE");
@@ -822,6 +861,20 @@ public class Common {
 			System.err.println("FAILL");
 		}
 		
+	}
+	
+	public static String Convert1252ToUTF8(String windows1252Text) {
+		final Charset fromCharset = Charset.forName("windows-1252");
+		final Charset toCharset = Charset.forName("UTF-8");
+		 String UTF8Text = new String(windows1252Text.getBytes(fromCharset), toCharset);
+		 return UTF8Text;
+	}
+	
+	public static String ConvertUTF8To1252(String UTF8Text) {
+		final Charset fromCharset = Charset.forName("UTF-8");
+		final Charset toCharset = Charset.forName("windows-1252");
+		 String windows1252Text = new String(UTF8Text.getBytes(fromCharset), toCharset);
+		 return windows1252Text;
 	}
 
 	public static String getTextByElement(String ElementAddressTyp, String ElementAddress) {
@@ -981,13 +1034,14 @@ public class Common {
 		return elemText.trim();
 	}
 	
-	public static List<WebElement> ComboboxInput(String ComboboxAddressTyp, String ComboboxAddress, String inputText) throws Exception{
+	public static List<WebElement> ComboboxInput(String ComboboxAddressTyp, String ComboboxAddress, String inputText1) throws Exception{
 		List<WebElement> listbox = null;
+		String inputText = Convert1252ToUTF8(inputText1);
 		WebElement inputBox = Locator(ComboboxAddressTyp, ComboboxAddress);
 		Actions actions = new Actions(driver);
 		actions.moveToElement(inputBox).click().sendKeys(inputText).build().perform();
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			listbox = ListLocator("textName", inputText);
 			System.out.println(listbox.size());
 		
@@ -997,8 +1051,9 @@ public class Common {
 		return listbox;
 	}
 	//Text input than click on a element
-	public static void ComboboxInputClicker(String ComboboxAddressTyp, String ComboboxAddress, String inputText, String inputPos) {
+	public static void ComboboxInputClicker(String ComboboxAddressTyp, String ComboboxAddress, String inputText1, String inputPos) {
 		WebElement inputBox = Locator(ComboboxAddressTyp, ComboboxAddress);
+		String inputText = Convert1252ToUTF8(inputText1);
 		Actions actions = new Actions(driver);
 		actions.moveToElement(inputBox).click().sendKeys(inputText).build().perform();
 		try {
@@ -1124,6 +1179,60 @@ String elem = driver.findElement(By.id(id)).getAttribute("value");
 	elem = "Miljöh";
 	}
 return elem;
+}
+
+public static String IDKaesewahl(String row, String col) {
+	row.trim();
+	col.trim();
+	String id = null;
+	if(row.equals("Cheddar") && col.equals("Wenig")) {
+		id= "tabInput1D";
+	}
+	if(row.equals("Cheddar") && col.equals("Durchschnittlich")) {
+		id= "tabInput1F";
+	}
+	if(row.equals("Cheddar") && col.equals("Viel")) {
+		id= "tabInput1I";
+	}
+	if(row.equals("Mozzarella") && col.equals("Wenig")) {
+		id= "tabInput2D";
+	}
+	if(row.equals("Mozzarella") && col.equals("Durchschnittlich")) {
+		id= "tabInput2F";
+	}
+	if(row.equals("Mozzarella") && col.equals("Viel")) {
+		id= "tabInput2I";
+	}
+	return id;
+}
+
+public static String[] IDKaesewahlCell (String col) {
+	String ids = null;
+	String[] idsCol=null;
+	if(col.equals("Wenig")) {
+		ids = "tabInput1D,tabInput2D";
+	}
+	if(col.equals("Durchschnittlich")) {
+		ids = "tabInput1F,tabInput2F";
+	}
+	if(col.equals("Viel")) {
+		ids= "tabInput1I,tabInput2I";
+	}
+	idsCol = ids.split(",");
+	return idsCol;
+}
+
+public static String[] IDKaesewahlRow (String row) {
+	String ids = null;
+	String[] idsRow=null;
+	if(row.equals("Cheddar")) {
+		ids = "tabInput1D,tabInput1F,tabInput1I";
+	}
+	if(row.equals("Mozzarella")) {
+		ids = "tabInput2D,tabInput2F,tabInput2I";
+	}
+	idsRow = ids.split(",");
+	return idsRow;
 }
 	
 	/*

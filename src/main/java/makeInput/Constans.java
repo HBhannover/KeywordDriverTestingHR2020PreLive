@@ -57,7 +57,9 @@ public class Constans {
 	public static String urlPPIAG = "https://www.ppi.de/"; //für TF8
 	public static String urlProbe = "https://chandanachaitanya.github.io/selenium-practice-site/";
 	public static String urlKombobox ="https://www.ibm.com/support/knowledgecenter/de";
-	public static String urlHenrik = "file:///C:/Users/case/Desktop/HR2020/Testobjekt/index.html";
+	//public static String urlHenrik = "file:///C:/Users/case/Desktop/HR2020/Testobjekt/index.html";
+	public static String urlHenrik = "C:/Users/case/Desktop/Testobjekt2/Testobjekt/index.html";
+	
 	
 	// Elements lokalisieren:
 	
@@ -88,28 +90,49 @@ public class Constans {
 	public static String RadioButton3_AddressTyp = "id";
 	public static String RadioButton3_Address = "ae";
 	
-/***CheckBox**/
+	public static String RadioButton4_AddressTyp = "id";
+	public static String RadioButton4_Address = "b";
+	
+/***CheckBox**/	
 	public static String CheckBox1_AddressTyp = "xpath";
-	public static String CheckBox1_Address = "//input[@value='salami']";
+	public static String CheckBox1_Address = "//input[@value='tomate']";
 	
 	public static String CheckBox2_AddressTyp = "xpath";
-	public static String CheckBox2_Address = "//input[@value='schinken']";
+	public static String CheckBox2_Address = "//input[@value='salami']";
 	
 	public static String CheckBox3_AddressTyp = "xpath";
-	public static String CheckBox3_Address = "//input[@value='sardellen']";
+	public static String CheckBox3_Address = "//input[@value='schinken']";
 	
 	public static String CheckBox4_AddressTyp = "xpath";
-	public static String CheckBox4_Address = "//input[@value='ananas']";
+	public static String CheckBox4_Address = "//input[@value='sardellen']";
+	
+	public static String CheckBox5_AddressTyp = "xpath";
+	public static String CheckBox5_Address = "//input[@value='ananas']";
+	
+	public static String CheckBox6_AddressTyp = "xpath";
+	public static String CheckBox6_Address = "//input[@value='artischocken']";
+	
+	public static String CheckBox7_AddressTyp = "xpath";
+	public static String CheckBox7_Address = "//input[@value='champignons']";
 	
 /***Tabelle**/
-	//Tabelle1
+	//Tabelle: Käsewahl
+	public static String Table1_NameKasewahl = "Käsewahl";
 	public static String Table1_AddressTyp = "xpath";
 	public static String Table1_Address = "//*[@id='tabelle1']//tbody//tr";
 	public static String Table1_ColumnstagName = "th";
 	public static String Table1_ColumnstagNameInhalt = "td";
+	
+	//Tabelle1
+//	public static String Table1_Name = "tabelle1";
+//	public static String Table1_AddressTyp = "xpath";
+//	public static String Table1_Address = "//*[@id='tabelle1']//tbody//tr";
+//	public static String Table1_ColumnstagName = "th";
+//	public static String Table1_ColumnstagNameInhalt = "td";
 
 	
 	//Tabelle2
+	public static String Table2_Name = "tabelle2";
 	public static String Table2_AddressTyp = "xpath";
 	public static String Table2_Address = "//*[@id='tabelle2']//tbody//tr";
 	public static String Table2_ColumnstagName = "th";
@@ -119,14 +142,14 @@ public class Constans {
 	//public static String Schalflaeche1_AddressTyp = "id";
 	//public static String Schalflaeche1_Address = "schaltfläche1";
 	public static String Schalflaeche1_AddressTyp = "xpath";
-	public static String Schalflaeche1_Address = "//button[@onclick='changeVehicle()']";
+	public static String Schalflaeche1_Address = "//button[@onclick='calcPrice()']";
 	
 	
 	//public static String Schalflaeche2_AddressTyp = "id";
 	//public static String Schalflaeche2_Address = "schaltfläche2";
 	
 	public static String Schalflaeche2_AddressTyp = "xpath";
-	public static String Schalflaeche2_Address = "//input[@onclick='switchLight()']";
+	public static String Schalflaeche2_Address = "//button[@onclick='order()']";
 	
 /***Dropdownliste**/
 	public static String DropDown1_AddressTyp = "id";
@@ -142,6 +165,12 @@ public class Constans {
 /***Ausgabefeld**/
 	public static String Ausgabefeld1_AddressTyp = "id";
 	public static String Ausgabefeld1_Address = "ausgabefeld1";
+	
+	public static String Ausgabefeld2_AddressTyp = "id";
+	public static String Ausgabefeld2_Address = "ausgabefeld2";
+	
+	public static String Ausgabefeld3_AddressTyp = "id";
+	public static String Ausgabefeld3_Address = "ausgabefeld3";
 	
 /***Kombobox (Kombinationsfeldern): wird hier als eine Kombination zwischen ein Textfeld und eine Dropdown-Liste **/
 	public static String Kombobox1_AddressTyp ="id"; 
