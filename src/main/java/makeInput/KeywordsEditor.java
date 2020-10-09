@@ -117,15 +117,13 @@ public class KeywordsEditor {
 			prf +=1;
 			String quoteText2 = quoteText[1].toString();
 			Common.InputValueInField(Constans.Textfeld1_AddressTyp, Constans.Textfeld1_Address, quoteText2);
-			System.out.println("1löööß");
 			logger.info("Textfeldseingabe erfolgreich!");
 		}
 		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Adresse")||SENTENCES[i].contains("eingabefeld2")) && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("eingebe")) {			
 			prf +=1;
-			System.out.println("löööß");
 			String quoteText2 = quoteText[1].toString();
 			Common.InputValueInField(Constans.Textfeld2_AddressTyp, Constans.Textfeld2_Address, quoteText2);
-			logger.info("löööß Textfeldseingabe erfolgreich!");
+			logger.info("Textfeldseingabe erfolgreich!");
 		}
 		//Textfeld/Rechtsklick
 		if(SENTENCES[i].contains("Textfeld") && (SENTENCES[i].contains("Name")||SENTENCES[i].contains("eingabefeld1")) && SENTENCES[i].contains("Rechtsklick") && SENTENCES[i].contains("auswähle")) {
@@ -763,7 +761,7 @@ public class KeywordsEditor {
 				String outputText_Istwert = Common.getTextByElement(Constans.Ausgabefeld1_AddressTyp, Constans.Ausgabefeld1_Address);
 				System.out.println("Text2: "+quoteText2);
 				System.out.println(Common.ConvertUTF8To1252(outputText_Istwert).equals(quoteText2) + " --> " + Common.ConvertUTF8To1252(outputText_Istwert));
-				if (outputText_Istwert.equals(quoteText2)) {
+				if (Common.ConvertUTF8To1252(outputText_Istwert).equals(quoteText2)) {
 					logger.info(quoteText2+ " wird angezeigt");
 				} else {
 					logger.warning("\""+quoteText2 + "\": NICHT angezeigt");
@@ -775,11 +773,11 @@ public class KeywordsEditor {
 				prf +=1;
 				String quoteText2 = quoteText[1].toString();
 				String outputText_Istwert = Common.getTextByElement(Constans.Ausgabefeld2_AddressTyp, Constans.Ausgabefeld2_Address);
-				System.out.println(outputText_Istwert.equals(quoteText2) + " --> " + outputText_Istwert);
-				if (outputText_Istwert.equals(quoteText2)) {
-					logger.info(outputText_Istwert+ " wird angezeigt");
+				System.out.println(Common.ConvertUTF8To1252(outputText_Istwert).equals(quoteText2) + " --> " + Common.ConvertUTF8To1252(outputText_Istwert));
+				if (Common.ConvertUTF8To1252(outputText_Istwert).equals(quoteText2)) {
+					logger.info(quoteText2+ " wird angezeigt");
 				} else {
-					logger.warning(outputText_Istwert + ": NICHT angezeigt");
+					logger.warning(quoteText2 + ": NICHT angezeigt");
 					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\Bild2NICHTangezeigt.jpg");			
 					errorLog1.add("ERROR");					
 				}
@@ -1066,7 +1064,7 @@ public class KeywordsEditor {
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Text") && SENTENCES[i].contains("angezeigt") 
 				&& !(SENTENCES[i].contains("Wert >") || SENTENCES[i].contains("Wert <") || SENTENCES[i].contains("Wert ="))){
 			String outputText=null;
-			if(SENTENCES[i].contains("Käseart")) {
+			if(SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle")) {
 				prf +=1;
 				outputText = Common.htmlTextGetter(Common.IDKaesewahl(quoteText[1], quoteText[2]));
 				System.out.println("[row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : " + outputText.equals(quoteText[3]));
@@ -1078,23 +1076,23 @@ public class KeywordsEditor {
 					errorLog1.add("ERROR");
 				}
 			}
-			if(!SENTENCES[i].contains("Käsewahl") && !SENTENCES[i].contains("tabelle2")) {
-				prf +=1;
-				outputText =  Common.searchTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt).getText();
-				Thread.sleep(2000);
-				System.out.println("[row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : " + outputText.equals(quoteText[3]));
-				if(outputText.equals(quoteText[3])) {
-					logger.info("[row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : is " + outputText.equals(quoteText[3]));
-				}else {
-					logger.warning("[row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : is " + outputText.equals(quoteText[3]));
-					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\1TextNichtAngezeigt.jpg");
-					errorLog1.add("ERROR");
-				}
-			}			
+//			if(!SENTENCES[i].contains("Käsewahl") && !SENTENCES[i].contains("tabelle2")) {
+//				prf +=1;
+//				outputText =  Common.searchTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt).getText();
+//				Thread.sleep(2000);
+//				System.out.println("[row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : " + outputText.equals(quoteText[3]));
+//				if(outputText.equals(quoteText[3])) {
+//					logger.info("[row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : is " + outputText.equals(quoteText[3]));
+//				}else {
+//					logger.warning("[row;col] = ["+quoteText[1]+";"+quoteText[2]+"] : is " + outputText.equals(quoteText[3]));
+//					Common.takeScreenShort("C:\\Users\\case\\Desktop\\HR2020\\Logs_Screenshots\\CacheScreenShot\\1TextNichtAngezeigt.jpg");
+//					errorLog1.add("ERROR");
+//				}
+//			}			
 		}
 		// Tabelle/Zeile/Spalte/Wert2 ><= Wert1 angezeigt
 		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("angezeigt") && SENTENCES[i].contains("Wert")
-				&& SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
+				&& SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle"))
 				&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Spalte") && (SENTENCES[i].contains("Wert >")
 						|| SENTENCES[i].contains("Wert <") || SENTENCES[i].contains("Wert ="))) {
 			String cellText = Common.searchTableCell(Constans.Table1_AddressTyp, Constans.Table1_Address, quoteText[1], quoteText[2], Constans.Table1_ColumnstagName, Constans.Table1_ColumnstagNameInhalt).getText();
@@ -1181,7 +1179,7 @@ public class KeywordsEditor {
 			}
 		}
 		//Tabelle/Zeile/Wert/zu finden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle"))
 				&& SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Wert") && SENTENCES[i].contains("zu finden")
 				&& !SENTENCES[i].contains("Spalte")) {
 			prf +=1;
@@ -1217,7 +1215,7 @@ public class KeywordsEditor {
 		}
 		
 		//Tabelle/Spalte/Wert/zu finden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle"))
 				&& SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Wert")
 				&& SENTENCES[i].contains("zu finden") && !SENTENCES[i].contains("Zeile")) {
 			prf +=1;
@@ -1253,7 +1251,7 @@ public class KeywordsEditor {
 		}
 		
 		// Tabelle/Zeile/alle Werte ><= Wert1 angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle"))
 				&& SENTENCES[i].contains("Zeile") && !SENTENCES[i].contains("Spalte")
 				&& SENTENCES[i].contains("alle") && SENTENCES[i].contains("angezeigt werden")
 				&& (SENTENCES[i].contains("Werte >") || SENTENCES[i].contains("Werte <")|| SENTENCES[i].contains("Werte ="))) {		
@@ -1349,7 +1347,7 @@ public class KeywordsEditor {
 		}}
 		
 		// Tabelle/Spalte/alle Werte ><= Wert1 angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle"))
 				&& SENTENCES[i].contains("Spalte") && !SENTENCES[i].contains("Zeile")
 				&& SENTENCES[i].contains("alle") && SENTENCES[i].contains("angezeigt werden")
 				&& (SENTENCES[i].contains("Werte >") || SENTENCES[i].contains("Werte <") || SENTENCES[i].contains("Werte ="))) {
@@ -1446,7 +1444,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/Spalte/maximal/minimal/genau Werte-Anzahl angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && SENTENCES[i].contains("Käsewahl")&& SENTENCES[i].contains("Spalte") && !SENTENCES[i].contains("Zeile")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle") && (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle"))&& SENTENCES[i].contains("Spalte") && !SENTENCES[i].contains("Zeile")
 				&& (SENTENCES[i].contains("maximal")||SENTENCES[i].contains("minimal")||SENTENCES[i].contains("genau")) && SENTENCES[i].contains("Werte angezeigt werden")) {
 			int count = 0;
 			String wertString1 = null;
@@ -1502,7 +1500,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/Zeile/maximal/minimal/genau Werte-Anzahl angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("Zeile") && !SENTENCES[i].contains("Spalte")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("Zeile") && !SENTENCES[i].contains("Spalte")
 				&& (SENTENCES[i].contains("maximal")||SENTENCES[i].contains("minimal")||SENTENCES[i].contains("genau")) && SENTENCES[i].contains("Werte angezeigt werden")) {
 			String wertString1 = null;
 			int count = 0;
@@ -1558,7 +1556,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/Zeile/Liste/angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Liste") && SENTENCES[i].contains("angezeigt werden")) {
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("Zeile") && SENTENCES[i].contains("Liste") && SENTENCES[i].contains("angezeigt werden")) {
 			prf +=1;
 			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
 			for(int k=0; k<eckKlmText.length; k++) {
@@ -1573,7 +1571,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/Spalte/Liste/angezeigt werden
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Liste") && SENTENCES[i].contains("angezeigt werden")) {
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("Spalte") && SENTENCES[i].contains("Liste") && SENTENCES[i].contains("angezeigt werden")) {
 			prf +=1;
 			String[] eckKlmText = EckigKlammernTexts.split("%Space&");
 			for(int k=0; k<eckKlmText.length; k++) {
@@ -1588,7 +1586,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/beliebigen Zeile/ein Wert in der Spalte X/ ein Wert in der Spalte Y/vorhanden ist
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("beliebigen Zeile") && SENTENCES[i].contains("ein Wert") && SENTENCES[i].contains("in der Spalte")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("beliebigen Zeile") && SENTENCES[i].contains("ein Wert") && SENTENCES[i].contains("in der Spalte")
 				&& SENTENCES[i].contains("und ein Wert") && SENTENCES[i].contains("vorhanden ist")) {
 			prf +=1;
 			int k = 0; int m = 0; int n = 0; int j = 0;
@@ -1650,7 +1648,7 @@ public class KeywordsEditor {
 			}
 		}
 		// Tabelle/beliebigen Spalte/ein Wert in der Zeile X/ ein Wert in der Zeile Y/vorhanden ist
-		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& SENTENCES[i].contains("Käsewahl") && SENTENCES[i].contains("beliebigen Spalte") && SENTENCES[i].contains("ein Wert") && SENTENCES[i].contains("in der Zeile")
+		if (SENTENCES[i].contains("prüfe") && SENTENCES[i].contains("Tabelle")&& (SENTENCES[i].contains("Käsewahl") || SENTENCES[i].contains("Käsetabelle")) && SENTENCES[i].contains("beliebigen Spalte") && SENTENCES[i].contains("ein Wert") && SENTENCES[i].contains("in der Zeile")
 				&& SENTENCES[i].contains("und ein Wert") && SENTENCES[i].contains("vorhanden ist")) {
 			prf +=1;
 			int k = 0; int m = 0; int n = 0; int j = 0;
@@ -2204,8 +2202,8 @@ public class KeywordsEditor {
 		}
 // Wenn ein Satz nicht abgedeckt werden kann:
 		if (!(prf > 0)) {
-			System.out.println("Dieser Satz ist nicht in Ordnung gemäß Mustersatz oder Code [Klasse: KeywordsEditor.java]");
-			logger.warning("Eingelesener Satz nicht in Ordnung, bitte gegen Mustersatz oder Code prüfen [Klasse: KeywordsEditor.java]!!! \r\n+ Der Satz ist: "+SENTENCES[i]);
+			System.out.println("Dieser Satz ist nicht in Ordnung gemäß Mustersatz oder Code");
+			logger.warning("Eingelesener Satz nicht in Ordnung, bitte gegen Mustersatz oder Code prüfen \r\n+ Der Satz ist: "+SENTENCES[i]);
 		} else {
 			prf = 0;
 		}
@@ -2225,13 +2223,13 @@ public class KeywordsEditor {
 //  public Verifier verifier = new Verifier() {
 //  // After each method perform this check
 //  @Override
-  public String verify() {
-  	String out="";
-      assertTrue("Error Log is not Empty!", errorLog.isEmpty());
-      for (int i=0; i<errorLog.size();i++) {
-      	out = out+ ","+errorLog.get(i);
-      }
-      return out;
-  }
+//  public String verify() {
+//  	String out="";
+//      assertTrue("Error Log is not Empty!", errorLog.isEmpty());
+//      for (int i=0; i<errorLog.size();i++) {
+//      	out = out+ ","+errorLog.get(i);
+//      }
+//      return out;
+//  }
 
 }

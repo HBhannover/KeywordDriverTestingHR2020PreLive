@@ -64,7 +64,7 @@ public class Common {
  		driver.get(inputUrl);
  		driver.manage().window().maximize();
  		try {
-			TimeUnit.SECONDS.sleep(10);
+			TimeUnit.SECONDS.sleep(2);
 		} catch (InterruptedException e) {
 			System.out.println("no url was found");
 			e.printStackTrace();

@@ -56,15 +56,17 @@ public class ExcecutionEngine {
 	static Formatter klartext;
 	static String comment;
 	
-	 static Logger logger = Logger.getLogger("ExcecutionEngine");
+	 static Logger logger ;//= Logger.getLogger("ExcecutionEngine");
 	
 	//static KeywordsEditor keywordsEdit;
 
 	public static void main(String[] args) throws Exception {
 //		   Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 //		   logger.setLevel(Level.ALL);
-		
+		logger = Logger.getLogger("ExcecutionEngine");
 		LogManager.getLogManager().readConfiguration(new FileInputStream("U:\\git\\KeywordDriverTestingHR2020\\src\\main\\java\\Log4jDB\\loggingAPI.properties"));
+//		FileHandler fh = new FileHandler("C:/Users/case/Desktop/HR2020/Logs_Screenshots/TestLogsID.txt");
+//		   logger.addHandler(fh);
 	  
 		logger.info("ANFANG VON LOGS");
 		String sentence = "";
@@ -79,7 +81,7 @@ public class ExcecutionEngine {
         System.out.println("file.encoding=" + System.getProperty("file.encoding"));
 
         System.out.println("Default Charset=" + Charset.defaultCharset());
-        System.setProperty("file.encoding", "UTF-8");
+      //  System.setProperty("file.encoding", "UTF-8");
         System.out.println("file.encoding=" + System.getProperty("file.encoding"));
 
 
@@ -182,7 +184,7 @@ System.out.println("inputLine hier: "+inputLine);
             while ((inputLine5 = in5.readLine()) != null) {
             	//inputLine5.getBytes(StandardCharsets.UTF_16BE);
                 content5.append(inputLine5);
-System.out.println("Hier sind Sätze: "+inputLine5);
+//System.out.println("Hier sind Sätze: "+inputLine5);
 
             }
 
@@ -402,5 +404,7 @@ System.out.println("Hier sind Sätze: "+inputLine5);
        int responseCode = ((HttpURLConnection) con3).getResponseCode();
        System.out.println(responseCode); // Should be 200
     	}
+    	FileHandler fh = new FileHandler("C:/Users/case/Desktop/HR2020/Logs_Screenshots/TestLogsID.txt");
+		   logger.addHandler(fh);
 	}	
 }
